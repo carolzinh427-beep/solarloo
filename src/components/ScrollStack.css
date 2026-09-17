@@ -1,83 +1,70 @@
 .scroll-stack-scroller {
   position: relative;
   width: 100%;
-  height: 480px;
-  max-width: 900px;
+  max-width: 860px;
   margin: 0 auto;
-  overflow-y: auto;
-  overflow-x: hidden;
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  will-change: scroll-position;
-  border-radius: var(--radius-lg, 16px);
-  background-color: transparent;
-  padding: 0 10px;
+  overflow: hidden;
+  border-radius: 16px;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
 }
 
-/* Custom scrollbar for scroller */
 .scroll-stack-scroller::-webkit-scrollbar {
-  width: 6px;
-}
-.scroll-stack-scroller::-webkit-scrollbar-track {
-  background: rgba(124, 179, 66, 0.1);
-  border-radius: 10px;
-}
-.scroll-stack-scroller::-webkit-scrollbar-thumb {
-  background: #7CB342;
-  border-radius: 10px;
+  display: none; /* Chrome/Safari */
 }
 
 .scroll-stack-inner {
-  padding: 1.5rem 1rem 8rem 1rem;
-  min-height: 100%;
+  position: relative;
+  width: 100%;
+  padding: 0;
 }
 
 .scroll-stack-card-wrapper {
-  position: relative;
+  width: 100%;
 }
 
 .scroll-stack-card {
-  transform-origin: top center;
-  will-change: transform, filter;
-  backface-visibility: hidden;
-  transform-style: preserve-3d;
-  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.08), 0 4px 12px -2px rgba(124, 179, 66, 0.08);
   width: 100%;
-  margin: 0 auto 30px auto;
-  padding: 1.8rem 2rem;
-  border-radius: 20px;
-  box-sizing: border-box;
+  margin: 0;
+  padding: 24px 28px;
+  border-radius: 16px;
   background-color: #FFFFFF;
-  border: 1px solid #DCEDC8;
-  -webkit-transform: translateZ(0);
-  transform: translateZ(0);
-  position: relative;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #C5E1A5;
+  box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.06), 0 4px 12px -2px rgba(124, 179, 66, 0.08);
+  box-sizing: border-box;
 }
 
-.scroll-stack-card:hover {
-  border-color: #7CB342;
-  box-shadow: 0 14px 36px -4px rgba(0, 0, 0, 0.12), 0 6px 16px -2px rgba(124, 179, 66, 0.15);
+.scroll-stack-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
 }
 
-.scroll-stack-end {
-  width: 100%;
-  height: 40px;
+.stack-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #C5E1A5;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  padding: 0;
+}
+
+.stack-dot:hover {
+  background-color: #7CB342;
+}
+
+.stack-dot.active {
+  width: 28px;
+  border-radius: 12px;
+  background-color: #7CB342;
 }
 
 @media (max-width: 640px) {
-  .scroll-stack-scroller {
-    height: 420px;
-    padding: 0;
-  }
   .scroll-stack-card {
-    padding: 1.2rem 1.2rem;
-    border-radius: 16px;
-  }
-  .scroll-stack-inner {
-    padding: 1rem 0.5rem 6rem 0.5rem;
+    padding: 16px 16px;
   }
 }

@@ -19,7 +19,7 @@ export default function Solutions() {
       title: 'Solar Rural',
       icon: <Tractor size={18} />,
       description: 'Sistemas para o agronegócio, atendendo fazendas, irrigação e produção rural com autonomia.',
-      image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80',
+      image: '/solar_panels_onda_verde.jpg',
     },
   ];
 

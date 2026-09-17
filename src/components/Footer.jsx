@@ -75,7 +75,7 @@ export default function Footer() {
 
       <style>{`
         .footer-root {
-          background-color: var(--green-light);
+          background-color: var(--green-light, #DCEEC2) !important;
           border-top: 1px solid var(--green-border);
           padding: 36px 0 20px 0;
         }
