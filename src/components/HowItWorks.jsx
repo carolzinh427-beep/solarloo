@@ -89,6 +89,10 @@ export default function HowItWorks() {
       </div>
 
       <style>{`
+        #how-it-works {
+          background-color: #F4F9EC !important;
+        }
+
         .stepper-wrapper {
           max-width: 900px;
           margin: 0 auto;
