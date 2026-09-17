@@ -84,7 +84,7 @@ export default function SolarSimulator() {
             <div className="simulator-result-box">
               <div className="sim-res-img-frame">
                 <img
-                  src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80"
+                  src="/solar_panels_onda_verde.jpg"
                   alt="Painéis Solares Onda Verde"
                   className="sim-res-img"
                 />
@@ -97,9 +97,9 @@ export default function SolarSimulator() {
               </div>
 
               <div className="res-disclaimer">
-                <AlertCircle size={18} className="disclaimer-icon" />
+                <AlertCircle size={16} className="disclaimer-icon" />
                 <p>
-                  <strong>Aviso importante:</strong> Este valor é uma <strong>estimativa inicial</strong> com fins de referência. O dimensionamento real dos equipamentos e a economia exata dependem de uma análise técnica detalhada do local.
+                  <strong>Aviso:</strong> Este valor é uma <strong>estimativa inicial</strong>. O dimensionamento exato depende de análise técnica do local.
                 </p>
               </div>
 
@@ -109,9 +109,9 @@ export default function SolarSimulator() {
                 rel="noopener noreferrer"
                 className="btn-primary w-full btn-sim-cta"
               >
-                <MessageSquare size={20} />
+                <MessageSquare size={18} />
                 <span>Quero uma análise personalizada</span>
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </a>
             </div>
 
@@ -121,21 +121,27 @@ export default function SolarSimulator() {
       </div>
 
       <style>{`
+        #simulation {
+          padding-top: 40px !important;
+          padding-bottom: 45px !important;
+        }
+
         .simulator-card-wrap {
-          max-width: 960px;
+          max-width: 860px;
           margin: 0 auto;
         }
 
         .simulator-card {
-          padding: 40px;
+          padding: 24px 28px;
           display: grid;
           grid-template-columns: 1.1fr 0.9fr;
-          gap: 40px;
+          gap: 28px;
           align-items: center;
+          border-radius: 16px;
         }
 
         .sim-group {
-          margin-bottom: 28px;
+          margin-bottom: 18px;
         }
 
         .sim-group:last-child {
@@ -146,14 +152,14 @@ export default function SolarSimulator() {
           display: block;
           font-family: var(--font-heading);
           font-weight: 700;
-          font-size: 1.05rem;
+          font-size: 0.95rem;
           color: var(--text-title);
-          margin-bottom: 14px;
+          margin-bottom: 10px;
         }
 
         .options-grid {
           display: grid;
-          gap: 10px;
+          gap: 8px;
         }
 
         .options-bill {
@@ -167,16 +173,16 @@ export default function SolarSimulator() {
         .option-btn {
           background-color: var(--bg-subtle);
           border: 1px solid var(--border-color);
-          border-radius: var(--radius-md);
-          padding: 12px 14px;
+          border-radius: 8px;
+          padding: 9px 12px;
           font-family: var(--font-body);
           font-weight: 600;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           color: var(--text-body);
           cursor: pointer;
           display: flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           transition: all 0.2s ease;
           text-align: left;
         }
@@ -193,8 +199,8 @@ export default function SolarSimulator() {
         }
 
         .opt-check {
-          width: 16px;
-          height: 16px;
+          width: 14px;
+          height: 14px;
           display: flex;
           align-items: center;
           justify-content: center;
@@ -204,18 +210,19 @@ export default function SolarSimulator() {
         .simulator-result-box {
           background-color: var(--bg-subtle);
           border: 1px solid var(--border-color);
-          border-radius: var(--radius-md);
-          padding: 24px;
+          border-radius: 12px;
+          padding: 16px;
           display: flex;
           flex-direction: column;
-          gap: 16px;
+          gap: 12px;
         }
 
         .sim-res-img-frame {
           width: 100%;
           aspect-ratio: 16 / 9;
-          border-radius: var(--radius-sm);
+          border-radius: 8px;
           overflow: hidden;
+          border: 1px solid #DCEDC8;
         }
 
         .sim-res-img {
@@ -231,33 +238,33 @@ export default function SolarSimulator() {
         }
 
         .res-subtitle {
-          font-size: 0.85rem;
+          font-size: 0.8rem;
           color: var(--text-muted);
         }
 
         .res-value {
           font-family: var(--font-heading);
           font-weight: 800;
-          font-size: 1.8rem;
+          font-size: 1.5rem;
           color: var(--green-primary);
-          margin: 4px 0;
+          margin: 2px 0;
         }
 
         .res-context {
-          font-size: 0.8rem;
+          font-size: 0.78rem;
           color: var(--text-muted);
         }
 
         .res-disclaimer {
           display: flex;
-          gap: 10px;
+          gap: 8px;
           background-color: #FFFFFF;
           border: 1px solid var(--border-color);
-          border-radius: var(--radius-sm);
-          padding: 12px 14px;
-          font-size: 0.8rem;
+          border-radius: 8px;
+          padding: 8px 10px;
+          font-size: 0.78rem;
           color: var(--text-body);
-          line-height: 1.45;
+          line-height: 1.35;
         }
 
         .disclaimer-icon {
@@ -267,17 +274,19 @@ export default function SolarSimulator() {
         }
 
         .btn-sim-cta {
-          padding: 14px;
-          font-size: 0.95rem;
+          padding: 10px 14px;
+          font-size: 0.88rem;
+          border-radius: 8px;
         }
 
         @media (max-width: 900px) {
           .simulator-card {
             grid-template-columns: 1fr;
-            padding: 24px;
+            padding: 18px;
+            gap: 20px;
           }
           .options-bill {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
           }
         }
       `}</style>
