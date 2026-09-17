@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight, Phone } from 'lucide-react';
+import { Phone, ArrowRight } from 'lucide-react';
+import StaggeredMenu from './StaggeredMenu';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,17 +14,22 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Início', href: '#hero' },
-    { label: 'Energia Solar', href: '#solutions' },
-    { label: 'Como Funciona', href: '#how-it-works' },
-    { label: 'Simulação', href: '#simulation' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Contato', href: '#contact' },
+    { label: 'Início', link: '#hero', ariaLabel: 'Ir para o início' },
+    { label: 'Energia Solar', link: '#solutions', ariaLabel: 'Conhecer soluções' },
+    { label: 'Como Funciona', link: '#how-it-works', ariaLabel: 'Entender como funciona' },
+    { label: 'Simulação', link: '#simulation', ariaLabel: 'Simular economia' },
+    { label: 'FAQ', link: '#faq', ariaLabel: 'Ver perguntas frequentes' },
+    { label: 'Contato', link: '#contact', ariaLabel: 'Entrar em contato' },
+  ];
+
+  const socialItems = [
+    { label: 'WhatsApp: (11) 92489-1417', link: 'https://wa.me/5511924891417' },
+    { label: 'Instagram: @ondaverdeenergia', link: 'https://www.instagram.com/ondaverdeenergia/' },
   ];
 
   return (
     <header className={`header-root ${scrolled ? 'header-scrolled' : ''}`}>
-      {/* Top Bar em Verde Claro Acima do Header */}
+      {/* Top Bar Verde Claro */}
       <div className="top-bar-green">
         <div className="container top-bar-container">
           <div className="top-bar-left">
@@ -58,7 +63,7 @@ export default function Header() {
             <ul className="nav-list">
               {navItems.map((item) => (
                 <li key={item.label}>
-                  <a href={item.href} className="nav-item-link">
+                  <a href={item.link} className="nav-item-link">
                     {item.label}
                   </a>
                 </li>
@@ -66,53 +71,34 @@ export default function Header() {
             </ul>
           </nav>
 
-          {/* Action Button */}
+          {/* Action Button & Mobile Staggered Menu Trigger */}
           <div className="header-actions">
             <a href="#simulation" className="btn-primary btn-header">
               <span>Simular economia</span>
               <ArrowRight size={16} />
             </a>
-            
-            <button
-              className="mobile-hamburger"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Menu principal"
-              aria-expanded={mobileMenuOpen}
-            >
-              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
+
+            {/* React Bits Staggered Menu para Dispositivos Móveis e Navegação Fluida */}
+            <div className="staggered-menu-mobile-container">
+              <StaggeredMenu
+                position="right"
+                items={navItems}
+                socialItems={socialItems}
+                displaySocials={true}
+                displayItemNumbering={true}
+                menuButtonColor="#454545"
+                openMenuButtonColor="#7CB342"
+                changeMenuColorOnOpen={true}
+                colors={['#F4F9EC', '#DCEDC8', '#FFFFFF']}
+                logoUrl="/logo.svg"
+                accentColor="#7CB342"
+                isFixed={false}
+              />
+            </div>
           </div>
 
         </div>
       </div>
-
-      {/* Mobile Menu Drawer */}
-      {mobileMenuOpen && (
-        <div className="mobile-drawer">
-          <ul className="mobile-nav-list">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a
-                  href={item.href}
-                  className="mobile-nav-link"
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-            <li style={{ marginTop: '12px' }}>
-              <a
-                href="#simulation"
-                className="btn-primary w-full"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Simular economia
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
 
       <style>{`
         .header-root {
@@ -220,36 +206,8 @@ export default function Header() {
           font-size: 0.9rem;
         }
 
-        .mobile-hamburger {
+        .staggered-menu-mobile-container {
           display: none;
-          background: none;
-          border: none;
-          color: var(--text-title);
-          cursor: pointer;
-          padding: 6px;
-        }
-
-        .mobile-drawer {
-          display: none;
-          background-color: #FFFFFF;
-          border-bottom: 1px solid var(--border-color);
-          padding: 20px 24px 28px 24px;
-          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .mobile-nav-list {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: 16px;
-        }
-
-        .mobile-nav-link {
-          color: var(--text-title);
-          text-decoration: none;
-          font-size: 1.05rem;
-          font-weight: 600;
-          display: block;
         }
 
         @media (max-width: 992px) {
@@ -259,10 +217,7 @@ export default function Header() {
           .btn-header {
             display: none;
           }
-          .mobile-hamburger {
-            display: block;
-          }
-          .mobile-drawer {
+          .staggered-menu-mobile-container {
             display: block;
           }
         }
