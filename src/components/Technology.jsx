@@ -7,7 +7,7 @@ export default function Technology() {
       title: 'Painéis Solares',
       icon: <SunMedium size={20} />,
       description: 'Captam a iluminação solar e realizam a conversão primária em energia elétrica contínua.',
-      image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+      image: '/solar_panels_onda_verde.jpg',
     },
     {
       title: 'Inversor Solar',

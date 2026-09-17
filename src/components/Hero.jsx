@@ -72,7 +72,7 @@ export default function Hero() {
           position: relative;
           padding-top: 130px;
           padding-bottom: 70px;
-          background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80');
+          background-image: url('/solar_panels_onda_verde.jpg');
           background-size: cover;
           background-position: center center;
           background-repeat: no-repeat;
