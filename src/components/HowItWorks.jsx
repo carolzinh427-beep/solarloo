@@ -39,7 +39,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <section id="how-it-works" className="section-padding bg-white">
+    <section id="how-it-works" className="section-padding bg-subtle">
       <div className="container">
         
         <div className="section-header">

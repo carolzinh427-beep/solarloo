@@ -55,7 +55,7 @@ export default function Benefits() {
   ];
 
   return (
-    <section id="benefits" className="section-padding bg-subtle">
+    <section id="benefits" className="section-padding bg-white">
       <div className="container">
         <div className="section-header">
           <h2>Por que investir em energia solar?</h2>

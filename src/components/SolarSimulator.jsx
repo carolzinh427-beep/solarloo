@@ -24,7 +24,7 @@ export default function SolarSimulator() {
   const whatsappUrl = `https://wa.me/5511924891417?text=${whatsappMessage}`;
 
   return (
-    <section id="simulation" className="section-padding bg-subtle">
+    <section id="simulation" className="section-padding bg-white">
       <div className="container">
         
         {/* Section Header (NO BADGES AS REQUESTED) */}

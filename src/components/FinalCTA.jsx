@@ -3,7 +3,7 @@ import { MessageSquare, ArrowRight } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="section-padding final-cta-section bg-green-light">
+    <section className="section-padding final-cta-section bg-white">
       <div className="container">
         <div className="final-cta-box">
           <div className="final-cta-bg-image"></div>

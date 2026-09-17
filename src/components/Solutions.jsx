@@ -24,7 +24,7 @@ export default function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="section-padding bg-subtle">
+    <section id="solutions" className="section-padding bg-white">
       <div className="container">
         
         <div className="section-header">

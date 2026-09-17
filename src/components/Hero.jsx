@@ -7,6 +7,9 @@ export default function Hero() {
     <section id="hero" className="hero-section">
       {/* Solar Panel Background Overlay Mask */}
       <div className="hero-bg-overlay"></div>
+      
+      {/* Soft Bottom Transition Fade & Shadow into White Section */}
+      <div className="hero-bottom-shadow"></div>
 
       <div className="container hero-container">
         <div className="hero-content">
@@ -71,7 +74,7 @@ export default function Hero() {
         .hero-section {
           position: relative;
           padding-top: 130px;
-          padding-bottom: 70px;
+          padding-bottom: 90px;
           background-image: url('/solar_panels_onda_verde.jpg');
           background-size: cover;
           background-position: center center;
@@ -84,8 +87,20 @@ export default function Hero() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: radial-gradient(circle at center, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.97) 70%, rgba(255, 255, 255, 0.9) 100%);
+          background: radial-gradient(circle at center, rgba(255, 255, 255, 0.92) 0%, rgba(255, 255, 255, 0.95) 65%, rgba(255, 255, 255, 1) 100%);
           z-index: 1;
+        }
+
+        .hero-bottom-shadow {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height: 80px;
+          background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.75) 50%, #FFFFFF 100%);
+          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+          z-index: 2;
+          pointer-events: none;
         }
 
         .hero-container {

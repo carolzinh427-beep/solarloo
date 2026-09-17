@@ -30,7 +30,7 @@ export default function Technology() {
   ];
 
   return (
-    <section className="section-padding bg-white">
+    <section className="section-padding bg-subtle">
       <div className="container">
         
         <div className="section-header">
