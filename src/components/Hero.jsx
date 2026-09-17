@@ -60,7 +60,7 @@ export default function Hero() {
               href="https://wa.me/5511924891417?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20energia%20solar%20com%20a%20Onda%20Verde."
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-secondary btn-hero btn-whatsapp"
+              className="btn-primary btn-hero"
             >
               <MessageSquare size={16} />
               <span>Falar no WhatsApp</span>

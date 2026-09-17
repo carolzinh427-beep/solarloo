@@ -21,7 +21,7 @@ export default function FinalCTA() {
                 href="https://wa.me/5511924891417?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20uma%20an%C3%A1lise%20de%20energia%20solar%20com%20a%20Onda%20Verde."
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-primary btn-cta-main btn-whatsapp"
+                className="btn-primary btn-cta-main"
               >
                 <MessageSquare size={20} />
                 <span>Falar com a Onda Verde</span>
