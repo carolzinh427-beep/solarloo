@@ -30,7 +30,7 @@ export default function TrustSection() {
   ];
 
   return (
-    <section className="section-padding">
+    <section className="section-padding bg-white">
       <div className="container">
         
         <div className="section-header">

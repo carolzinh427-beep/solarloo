@@ -1,5 +1,5 @@
 /* ==========================================================================
-   Onda Verde Energia Solar - High-Ticket Agency Edition (R$ 5,000 Polish)
+   Onda Verde Energia Solar - Official Brand Color System (Alternating Sections)
    ========================================================================== */
 
 :root {
@@ -13,9 +13,9 @@
   --charcoal-dark: #222222;
   --charcoal-light: #666666;
   
-  /* Neutral Palette */
+  /* Neutral Palette: White, Black, Gray, Light Green */
   --bg-main: #FFFFFF;
-  --bg-subtle: #F8FAF5;
+  --bg-subtle: #F4F9EC;
   --bg-surface: #FFFFFF;
   
   --text-title: #222222;
@@ -30,8 +30,8 @@
   --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   
   /* Shadows & Radius */
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07);
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 8px -1px rgba(0, 0, 0, 0.07);
   --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
   
   --radius-lg: 14px;
@@ -100,10 +100,15 @@ p {
   padding: 70px 0;
 }
 
-.bg-subtle {
-  background-color: var(--bg-subtle);
-  border-top: 1px solid var(--border-color);
-  border-bottom: 1px solid var(--border-color);
+/* Alternating Section Backgrounds */
+.bg-white {
+  background-color: #FFFFFF;
+}
+
+.bg-green-light {
+  background-color: #F4F9EC;
+  border-top: 1px solid #DCEDC8;
+  border-bottom: 1px solid #DCEDC8;
 }
 
 /* Section Header */
@@ -204,7 +209,7 @@ p {
   box-shadow: var(--shadow-md);
 }
 
-/* Mobile Adjustments for High Ticket Feel */
+/* Mobile Adjustments */
 @media (max-width: 768px) {
   h1 { font-size: 2.2rem; }
   h2 { font-size: 1.65rem; }
