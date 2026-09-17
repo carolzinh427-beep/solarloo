@@ -33,7 +33,7 @@ export default function HowItWorks() {
       title: 'Geração e Economia',
       description: 'Seu sistema entra em operação comercial e você passa a produzir sua própria eletricidade limpa com até 95% de economia.',
       icon: <Zap size={20} />,
-      image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80',
+      image: '/solar_panels_onda_verde.jpg',
       details: ['Monitoramento em tempo real via app', 'Vistoria final da distribuidora de energia', 'Redução imediata na conta de luz'],
     },
   ];

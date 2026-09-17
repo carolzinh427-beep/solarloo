@@ -45,7 +45,7 @@ export default function Benefits() {
       icon: <ShieldCheck size={22} className="benefit-icon" />,
       title: 'Previsibilidade e proteção contra aumentos tarifários',
       description: 'Chega de surpresas com bandeiras amarelas ou vermelhas. Fique imune aos reajustes constantes da distribuidora de energia.',
-      image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=600&q=80',
+      image: '/solar_panels_onda_verde.jpg',
       highlights: [
         'Orçamento mensal previsível e estável',
         'Equipamentos com garantia de até 25 anos',
