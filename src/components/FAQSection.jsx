@@ -40,10 +40,9 @@ export default function FAQSection() {
   ];
 
   return (
-    <section id="faq" className="section-padding bg-subtle">
+    <section id="faq" className="section-padding bg-white">
       <div className="container">
         
-        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
           <h2>Perguntas frequentes</h2>
           <p>Esclareça as principais dúvidas sobre o funcionamento e os benefícios da energia solar.</p>

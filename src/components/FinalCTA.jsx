@@ -3,7 +3,7 @@ import { MessageSquare, ArrowRight } from 'lucide-react';
 
 export default function FinalCTA() {
   return (
-    <section className="section-padding final-cta-section">
+    <section className="section-padding final-cta-section bg-green-light">
       <div className="container">
         <div className="final-cta-box">
           <div className="final-cta-bg-image"></div>
@@ -35,19 +35,20 @@ export default function FinalCTA() {
 
       <style>{`
         .final-cta-section {
-          background-color: var(--bg-main);
+          position: relative;
         }
 
         .final-cta-box {
           position: relative;
           border: 1px solid var(--green-border);
           border-radius: var(--radius-lg);
-          padding: 70px 40px;
+          padding: 60px 40px;
           text-align: center;
           max-width: 960px;
           margin: 0 auto;
           overflow: hidden;
-          background-color: var(--green-light);
+          background-color: #FFFFFF;
+          box-shadow: var(--shadow-md);
         }
 
         .final-cta-bg-image {
@@ -59,7 +60,7 @@ export default function FinalCTA() {
           background-image: url('https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=1200&q=80');
           background-size: cover;
           background-position: center center;
-          opacity: 0.15;
+          opacity: 0.08;
           z-index: 1;
         }
 
@@ -69,7 +70,7 @@ export default function FinalCTA() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(180deg, rgba(244, 249, 236, 0.95) 0%, rgba(244, 249, 236, 0.9) 100%);
+          background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.92) 100%);
           z-index: 2;
         }
 
@@ -79,17 +80,17 @@ export default function FinalCTA() {
         }
 
         .final-cta-title {
-          font-size: 2.5rem;
+          font-size: 2.3rem;
           margin-bottom: 16px;
           color: var(--text-title);
         }
 
         .final-cta-text {
-          font-size: 1.1rem;
+          font-size: 1.05rem;
           color: var(--text-body);
           max-width: 640px;
-          margin: 0 auto 32px auto;
-          line-height: 1.6;
+          margin: 0 auto 28px auto;
+          line-height: 1.55;
         }
 
         .final-cta-btn-wrap {
@@ -98,16 +99,16 @@ export default function FinalCTA() {
         }
 
         .btn-cta-main {
-          padding: 16px 36px;
-          font-size: 1.05rem;
+          padding: 14px 32px;
+          font-size: 1rem;
         }
 
         @media (max-width: 768px) {
           .final-cta-box {
-            padding: 40px 20px;
+            padding: 36px 20px;
           }
           .final-cta-title {
-            font-size: 1.85rem;
+            font-size: 1.75rem;
           }
         }
       `}</style>
