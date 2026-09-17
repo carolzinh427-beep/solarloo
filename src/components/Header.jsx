@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
+import PillNav from './PillNav';
 import StaggeredMenu from './StaggeredMenu';
 
 export default function Header() {
@@ -14,12 +15,12 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { label: 'Início', link: '#hero', ariaLabel: 'Ir para o início' },
-    { label: 'Energia Solar', link: '#solutions', ariaLabel: 'Conhecer soluções' },
-    { label: 'Como Funciona', link: '#how-it-works', ariaLabel: 'Entender como funciona' },
-    { label: 'Simulação', link: '#simulation', ariaLabel: 'Simular economia' },
-    { label: 'FAQ', link: '#faq', ariaLabel: 'Ver perguntas frequentes' },
-    { label: 'Contato', link: '#contact', ariaLabel: 'Entrar em contato' },
+    { label: 'Início', href: '#hero', ariaLabel: 'Ir para o início' },
+    { label: 'Energia Solar', href: '#solutions', ariaLabel: 'Conhecer soluções' },
+    { label: 'Como Funciona', href: '#how-it-works', ariaLabel: 'Entender como funciona' },
+    { label: 'Simulação', href: '#simulation', ariaLabel: 'Simular economia' },
+    { label: 'FAQ', href: '#faq', ariaLabel: 'Ver perguntas frequentes' },
+    { label: 'Contato', href: '#contact', ariaLabel: 'Entrar em contato' },
   ];
 
   const socialItems = [
@@ -49,27 +50,27 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Main Navbar */}
+      {/* Main Navbar with PillNav Integration */}
       <div className="main-navbar">
         <div className="container header-container">
           
-          {/* Official Logo */}
+          {/* Official Logo Brand */}
           <a href="#hero" className="logo-brand">
             <img src="/logo.svg" alt="Onda Verde Energia Solar" className="header-logo-img" />
           </a>
 
-          {/* Desktop Nav Items */}
-          <nav className="desktop-nav">
-            <ul className="nav-list">
-              {navItems.map((item) => (
-                <li key={item.label}>
-                  <a href={item.link} className="nav-item-link">
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          {/* React Bits PillNav Component for Desktop Navigation */}
+          <div className="desktop-pill-nav">
+            <PillNav
+              items={navItems}
+              activeHref="#hero"
+              baseColor="#7CB342"
+              pillColor="#FFFFFF"
+              pillTextColor="#454545"
+              hoveredPillTextColor="#FFFFFF"
+              ease="power2.easeOut"
+            />
+          </div>
 
           {/* Action Button & Mobile Staggered Menu Trigger */}
           <div className="header-actions">
@@ -82,7 +83,7 @@ export default function Header() {
             <div className="staggered-menu-mobile-container">
               <StaggeredMenu
                 position="right"
-                items={navItems}
+                items={navItems.map(item => ({ label: item.label, link: item.href, ariaLabel: item.ariaLabel }))}
                 socialItems={socialItems}
                 displaySocials={true}
                 displayItemNumbering={true}
@@ -206,12 +207,16 @@ export default function Header() {
           font-size: 0.9rem;
         }
 
+        .desktop-pill-nav {
+          display: flex;
+        }
+
         .staggered-menu-mobile-container {
           display: none;
         }
 
         @media (max-width: 992px) {
-          .desktop-nav {
+          .desktop-pill-nav {
             display: none;
           }
           .btn-header {
