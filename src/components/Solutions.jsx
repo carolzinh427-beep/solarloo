@@ -4,21 +4,21 @@ import { Home, Building2, Tractor, ArrowRight } from 'lucide-react';
 export default function Solutions() {
   const solutions = [
     {
-      title: 'Energia Solar Residencial',
-      icon: <Home size={22} />,
-      description: 'Projetos sob medida para casas e condomínios que buscam reduzir gastos com energia e aumentar a autonomia energética da família.',
+      title: 'Solar Residencial',
+      icon: <Home size={18} />,
+      description: 'Projetos para casas e condomínios que buscam reduzir gastos com energia e aumentar a autonomia.',
       image: 'https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Energia Solar Comercial',
-      icon: <Building2 size={22} />,
-      description: 'Soluções de alta eficiência para empresas, comércios e escritórios que desejam reduzir custos operacionais fixos.',
+      title: 'Solar Comercial',
+      icon: <Building2 size={18} />,
+      description: 'Soluções de alta eficiência para empresas, comércios e escritórios reduzirem custos operacionais.',
       image: 'https://images.unsplash.com/photo-1613665813446-82a78c468a1d?auto=format&fit=crop&w=800&q=80',
     },
     {
-      title: 'Energia Solar Rural',
-      icon: <Tractor size={22} />,
-      description: 'Sistemas preparados para o agronegócio, atendendo fazendas, galpões de armazenagem, irrigação e produção rural.',
+      title: 'Solar Rural',
+      icon: <Tractor size={18} />,
+      description: 'Sistemas para o agronegócio, atendendo fazendas, irrigação e produção rural com autonomia.',
       image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80',
     },
   ];
@@ -27,7 +27,6 @@ export default function Solutions() {
     <section id="solutions" className="section-padding bg-subtle">
       <div className="container">
         
-        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
           <h2>Soluções completas em energia solar</h2>
           <p>Projetos desenvolvidos sob medida para atender a necessidade de cada tipo de imóvel.</p>
@@ -49,8 +48,8 @@ export default function Solutions() {
                 <p className="solution-desc">{item.description}</p>
 
                 <a href="#simulation" className="solution-link">
-                  <span>Simular para este perfil</span>
-                  <ArrowRight size={16} />
+                  <span>Simular perfil</span>
+                  <ArrowRight size={14} />
                 </a>
               </div>
             </div>
@@ -63,7 +62,7 @@ export default function Solutions() {
         .solutions-grid {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
-          gap: 32px;
+          gap: 24px;
         }
 
         .solution-card {
@@ -97,7 +96,7 @@ export default function Solutions() {
         }
 
         .solution-content {
-          padding: 24px;
+          padding: 18px 14px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -106,13 +105,13 @@ export default function Solutions() {
         .solution-header-row {
           display: flex;
           align-items: center;
-          gap: 12px;
-          margin-bottom: 12px;
+          gap: 8px;
+          margin-bottom: 8px;
         }
 
         .solution-icon-box {
-          width: 40px;
-          height: 40px;
+          width: 30px;
+          height: 30px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
           border: 1px solid var(--green-border);
@@ -124,37 +123,49 @@ export default function Solutions() {
         }
 
         .solution-title {
-          font-size: 1.15rem;
+          font-size: 0.98rem;
         }
 
         .solution-desc {
-          font-size: 0.92rem;
+          font-size: 0.85rem;
           color: var(--text-muted);
-          line-height: 1.55;
-          margin-bottom: 20px;
+          line-height: 1.45;
+          margin-bottom: 14px;
         }
 
         .solution-link {
           margin-top: auto;
           display: inline-flex;
           align-items: center;
-          gap: 8px;
+          gap: 6px;
           color: var(--green-primary);
           font-family: var(--font-heading);
           font-weight: 700;
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           text-decoration: none;
-          transition: gap 0.2s ease;
         }
 
-        .solution-link:hover {
-          gap: 12px;
-          color: var(--green-hover);
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 900px) {
           .solutions-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .solutions-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+          }
+          .solution-content {
+            padding: 10px 8px;
+          }
+          .solution-title {
+            font-size: 0.88rem;
+          }
+          .solution-desc {
+            font-size: 0.78rem;
+            line-height: 1.35;
           }
         }
       `}</style>

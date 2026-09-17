@@ -4,27 +4,27 @@ import { Shield, FileCheck, CheckCircle2, Award } from 'lucide-react';
 export default function TrustSection() {
   const trustPillars = [
     {
-      icon: <Shield size={24} className="trust-icon" />,
-      title: 'Compromisso com a Qualidade',
-      description: 'Trabalhamos com equipamentos testados e homologados pelos órgãos reguladores competentes.',
+      icon: <Shield size={20} className="trust-icon" />,
+      title: 'Qualidade técnica',
+      description: 'Equipamentos testados e homologados pelos órgãos reguladores competentes.',
       image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80',
     },
     {
-      icon: <FileCheck size={24} className="trust-icon" />,
-      title: 'Projeto Técnico Responsável',
-      description: 'Dimensionamento elaborado por profissionais para garantir máxima eficiência e segurança operacional.',
+      icon: <FileCheck size={20} className="trust-icon" />,
+      title: 'Projeto responsável',
+      description: 'Dimensionamento elaborado por profissionais para garantir eficiência.',
       image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
     },
     {
-      icon: <CheckCircle2 size={24} className="trust-icon" />,
-      title: 'Transparência no Processo',
-      description: 'Clareza em todas as etapas, desde o orçamento inicial até a ligação do sistema com a distribuidora.',
+      icon: <CheckCircle2 size={20} className="trust-icon" />,
+      title: 'Transparência total',
+      description: 'Clareza em todas as etapas, do orçamento inicial à ligação na concessionária.',
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
     },
     {
-      icon: <Award size={24} className="trust-icon" />,
-      title: 'Suporte e Acompanhamento',
-      description: 'Atendimento dedicado para orientar e solucionar todas as dúvidas sobre o funcionamento do seu sistema.',
+      icon: <Award size={20} className="trust-icon" />,
+      title: 'Acompanhamento',
+      description: 'Atendimento dedicado para orientar e solucionar todas as suas dúvidas.',
       image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=600&q=80',
     },
   ];
@@ -33,10 +33,9 @@ export default function TrustSection() {
     <section className="section-padding">
       <div className="container">
         
-        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
           <h2>Engenharia e atendimento responsável</h2>
-          <p>Nossa prioridade é oferecer um serviço transparente, seguro e alinhado com as normas técnicas do setor elétrico.</p>
+          <p>Nossa prioridade é oferecer um serviço transparente, seguro e alinhado com as normas do setor elétrico.</p>
         </div>
 
         <div className="trust-grid">
@@ -64,7 +63,7 @@ export default function TrustSection() {
         .trust-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
+          gap: 20px;
         }
 
         .trust-card {
@@ -89,7 +88,7 @@ export default function TrustSection() {
         }
 
         .trust-body {
-          padding: 20px;
+          padding: 16px 14px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -98,13 +97,13 @@ export default function TrustSection() {
         .trust-title-row {
           display: flex;
           align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
+          gap: 8px;
+          margin-bottom: 8px;
         }
 
         .trust-icon-box {
-          width: 36px;
-          height: 36px;
+          width: 32px;
+          height: 32px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
           border: 1px solid var(--green-border);
@@ -119,25 +118,37 @@ export default function TrustSection() {
         }
 
         .trust-title {
-          font-size: 1.05rem;
-          line-height: 1.3;
+          font-size: 0.98rem;
+          line-height: 1.25;
         }
 
         .trust-desc {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           color: var(--text-muted);
-          line-height: 1.5;
+          line-height: 1.45;
         }
 
         @media (max-width: 1024px) {
           .trust-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
           }
         }
 
         @media (max-width: 640px) {
           .trust-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+          }
+          .trust-body {
+            padding: 10px 8px;
+          }
+          .trust-title {
+            font-size: 0.88rem;
+          }
+          .trust-desc {
+            font-size: 0.78rem;
+            line-height: 1.35;
           }
         }
       `}</style>

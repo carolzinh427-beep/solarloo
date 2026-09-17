@@ -5,26 +5,26 @@ export default function Technology() {
   const techList = [
     {
       title: 'Painéis Solares',
-      icon: <SunMedium size={24} />,
-      description: 'Captam a iluminação solar e realizam a conversão primária em energia elétrica de forma contínua e silenciosa.',
+      icon: <SunMedium size={20} />,
+      description: 'Captam a iluminação solar e realizam a conversão primária em energia elétrica contínua.',
       image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Inversor Solar',
-      icon: <Cpu size={24} />,
-      description: 'Transforma a corrente contínua produzida pelos painéis na corrente alternada utilizada pelas tomadas e aparelhos do seu imóvel.',
+      icon: <Cpu size={20} />,
+      description: 'Transforma a corrente contínua produzida na corrente alternada utilizada pelas tomadas.',
       image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=600&q=80',
     },
     {
-      title: 'Estrutura de Instalação',
-      icon: <Layers size={24} />,
-      description: 'Suportes de fixação de alta durabilidade projetados para se adaptarem ao seu tipo de telhado com segurança.',
+      title: 'Estrutura de Fixação',
+      icon: <Layers size={20} />,
+      description: 'Suportes de alta durabilidade projetados para se adaptarem ao seu telhado com segurança.',
       image: 'https://images.unsplash.com/photo-1548337138-e87d889cc369?auto=format&fit=crop&w=600&q=80',
     },
     {
       title: 'Monitoramento Digital',
-      icon: <Smartphone size={24} />,
-      description: 'Sistema de acompanhamento em tempo real para você checar a produção diária de energia de forma simples no celular.',
+      icon: <Smartphone size={20} />,
+      description: 'Sistema de acompanhamento em tempo real para você checar a produção no celular.',
       image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=600&q=80',
     },
   ];
@@ -33,7 +33,6 @@ export default function Technology() {
     <section className="section-padding">
       <div className="container">
         
-        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
           <h2>Equipamentos e tecnologia do sistema</h2>
           <p>Entenda como cada componente trabalha em conjunto para gerar energia limpa para o seu imóvel.</p>
@@ -63,8 +62,8 @@ export default function Technology() {
       <style>{`
         .tech-grid {
           display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 28px;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 20px;
         }
 
         .tech-card {
@@ -76,7 +75,7 @@ export default function Technology() {
 
         .tech-image-frame {
           width: 100%;
-          aspect-ratio: 16 / 9;
+          aspect-ratio: 16 / 10;
           overflow: hidden;
           background-color: var(--bg-subtle);
         }
@@ -89,19 +88,22 @@ export default function Technology() {
         }
 
         .tech-body {
-          padding: 24px;
+          padding: 16px 14px;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
         }
 
         .tech-title-row {
           display: flex;
           align-items: center;
-          gap: 12px;
-          margin-bottom: 12px;
+          gap: 8px;
+          margin-bottom: 8px;
         }
 
         .tech-icon-wrap {
-          width: 42px;
-          height: 42px;
+          width: 32px;
+          height: 32px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
           border: 1px solid var(--green-border);
@@ -113,18 +115,37 @@ export default function Technology() {
         }
 
         .tech-title {
-          font-size: 1.15rem;
+          font-size: 0.98rem;
+          line-height: 1.25;
         }
 
         .tech-desc {
-          font-size: 0.92rem;
+          font-size: 0.85rem;
           color: var(--text-muted);
-          line-height: 1.55;
+          line-height: 1.45;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
           .tech-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+          }
+        }
+
+        @media (max-width: 640px) {
+          .tech-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+          }
+          .tech-body {
+            padding: 10px 8px;
+          }
+          .tech-title {
+            font-size: 0.88rem;
+          }
+          .tech-desc {
+            font-size: 0.78rem;
+            line-height: 1.35;
           }
         }
       `}</style>

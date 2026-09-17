@@ -17,7 +17,6 @@ export default function Footer() {
             <a href="#hero" className="logo-brand">
               <img src="/logo.svg" alt="Onda Verde Energia Solar" className="footer-logo-img" />
             </a>
-
             <p className="footer-tagline">
               Soluções inteligentes em energia solar fotovoltaica para residências, empresas e propriedades rurais.
             </p>
@@ -45,7 +44,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="contact-item-link"
               >
-                <MessageSquare size={18} className="contact-icon" />
+                <MessageSquare size={16} className="contact-icon" />
                 <span>WhatsApp: (11) 92489-1417</span>
               </a>
 
@@ -55,7 +54,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 className="contact-item-link"
               >
-                <Instagram size={18} className="contact-icon" />
+                <Instagram size={16} className="contact-icon" />
                 <span>Instagram: @ondaverdeenergia</span>
               </a>
             </div>
@@ -68,7 +67,7 @@ export default function Footer() {
           <p>© {new Date().getFullYear()} Onda Verde Energia Solar. Todos os direitos reservados.</p>
           
           <button className="scroll-top-button" onClick={scrollToTop} aria-label="Voltar ao topo">
-            <ArrowUp size={18} />
+            <ArrowUp size={16} />
           </button>
         </div>
 
@@ -78,48 +77,48 @@ export default function Footer() {
         .footer-root {
           background-color: #FFFFFF;
           border-top: 1px solid var(--border-color);
-          padding: 60px 0 30px 0;
+          padding: 36px 0 20px 0;
         }
 
         .footer-content-grid {
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1.2fr;
-          gap: 40px;
-          padding-bottom: 40px;
+          grid-template-columns: 1.4fr 1fr 1.2fr;
+          gap: 32px;
+          padding-bottom: 24px;
           border-bottom: 1px solid var(--border-color);
         }
 
         .footer-logo-img {
-          height: 44px;
+          height: 34px;
           width: auto;
           display: block;
         }
 
         .footer-tagline {
-          margin-top: 16px;
-          font-size: 0.92rem;
+          margin-top: 10px;
+          font-size: 0.85rem;
           color: var(--text-muted);
-          line-height: 1.5;
-          max-width: 320px;
+          line-height: 1.4;
+          max-width: 300px;
         }
 
         .footer-heading {
-          font-size: 1rem;
+          font-size: 0.95rem;
           color: var(--text-title);
-          margin-bottom: 16px;
+          margin-bottom: 10px;
         }
 
         .footer-links {
           list-style: none;
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 6px;
         }
 
         .footer-links a {
           color: var(--text-body);
           text-decoration: none;
-          font-size: 0.92rem;
+          font-size: 0.85rem;
           font-weight: 500;
           transition: color 0.2s ease;
         }
@@ -131,16 +130,16 @@ export default function Footer() {
         .contact-list {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 8px;
         }
 
         .contact-item-link {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
           color: var(--text-body);
           text-decoration: none;
-          font-size: 0.92rem;
+          font-size: 0.85rem;
           font-weight: 500;
           transition: color 0.2s ease;
         }
@@ -158,14 +157,14 @@ export default function Footer() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding-top: 24px;
-          font-size: 0.85rem;
+          padding-top: 16px;
+          font-size: 0.78rem;
           color: var(--text-muted);
         }
 
         .scroll-top-button {
-          width: 38px;
-          height: 38px;
+          width: 32px;
+          height: 32px;
           border-radius: var(--radius-sm);
           background-color: var(--bg-subtle);
           border: 1px solid var(--border-color);
@@ -183,10 +182,14 @@ export default function Footer() {
           color: var(--green-primary);
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 768px) {
+          .footer-root {
+            padding: 24px 0 16px 0;
+          }
           .footer-content-grid {
             grid-template-columns: 1fr;
-            gap: 32px;
+            gap: 20px;
+            padding-bottom: 16px;
           }
         }
       `}</style>

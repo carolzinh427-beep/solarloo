@@ -6,29 +6,29 @@ export default function HowItWorks() {
     {
       number: '01',
       title: 'Análise do consumo',
-      description: 'Avaliamos seu histórico de consumo de energia para compreender a necessidade exata do seu imóvel.',
-      icon: <Search size={20} />,
+      description: 'Avaliamos seu histórico para entender a necessidade exata do seu imóvel.',
+      icon: <Search size={18} />,
       image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
     },
     {
       number: '02',
-      title: 'Dimensionamento do sistema',
-      description: 'Elaboramos o projeto técnico personalizado, definindo a quantidade ideal de equipamentos.',
-      icon: <Compass size={20} />,
+      title: 'Dimensionamento',
+      description: 'Elaboramos o projeto técnico personalizado com os equipamentos ideais.',
+      icon: <Compass size={18} />,
       image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
     },
     {
       number: '03',
-      title: 'Instalação dos equipamentos',
-      description: 'Nossa equipe realiza a montagem das estruturas e painéis com rigor técnico e segurança.',
-      icon: <Wrench size={20} />,
+      title: 'Instalação técnica',
+      description: 'Montagem dos painéis e estruturas com rigor técnico e total segurança.',
+      icon: <Wrench size={18} />,
       image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=600&q=80',
     },
     {
       number: '04',
-      title: 'Geração da sua própria energia',
-      description: 'Após a homologação com a concessionária, seu sistema começa a produzir eletricidade limpa.',
-      icon: <Zap size={20} />,
+      title: 'Geração de energia',
+      description: 'Seu sistema entra em operação e você começa a produzir sua eletricidade.',
+      icon: <Zap size={18} />,
       image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80',
     },
   ];
@@ -37,7 +37,6 @@ export default function HowItWorks() {
     <section id="how-it-works" className="section-padding">
       <div className="container">
         
-        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
           <h2>Como funciona a transição para energia solar</h2>
           <p>Um processo simples, transparente e acompanhado em todas as etapas por nossa equipe.</p>
@@ -68,7 +67,7 @@ export default function HowItWorks() {
         .timeline-grid {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
+          gap: 20px;
         }
 
         .timeline-item {
@@ -104,19 +103,19 @@ export default function HowItWorks() {
 
         .step-num-badge {
           position: absolute;
-          top: 12px;
-          left: 12px;
+          top: 8px;
+          left: 8px;
           background-color: var(--green-primary);
           color: #FFFFFF;
           font-family: var(--font-heading);
           font-weight: 800;
-          font-size: 0.9rem;
-          padding: 4px 12px;
-          border-radius: 20px;
+          font-size: 0.8rem;
+          padding: 2px 8px;
+          border-radius: 12px;
         }
 
         .step-body {
-          padding: 20px;
+          padding: 16px 14px;
           display: flex;
           flex-direction: column;
           flex-grow: 1;
@@ -125,13 +124,13 @@ export default function HowItWorks() {
         .step-title-row {
           display: flex;
           align-items: center;
-          gap: 10px;
-          margin-bottom: 10px;
+          gap: 8px;
+          margin-bottom: 8px;
         }
 
         .step-icon-box {
-          width: 34px;
-          height: 34px;
+          width: 28px;
+          height: 28px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
           color: var(--green-primary);
@@ -142,25 +141,37 @@ export default function HowItWorks() {
         }
 
         .step-title {
-          font-size: 1.05rem;
-          line-height: 1.3;
+          font-size: 0.98rem;
+          line-height: 1.25;
         }
 
         .step-desc {
-          font-size: 0.9rem;
+          font-size: 0.85rem;
           color: var(--text-muted);
-          line-height: 1.5;
+          line-height: 1.45;
         }
 
         @media (max-width: 1024px) {
           .timeline-grid {
             grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
           }
         }
 
         @media (max-width: 640px) {
           .timeline-grid {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+          }
+          .step-body {
+            padding: 10px 8px;
+          }
+          .step-title {
+            font-size: 0.88rem;
+          }
+          .step-desc {
+            font-size: 0.78rem;
+            line-height: 1.35;
           }
         }
       `}</style>
