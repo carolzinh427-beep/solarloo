@@ -205,36 +205,54 @@ export default function Header() {
 
           .header-container {
             height: 64px;
+            padding: 0 16px;
           }
 
           .header-logo-img {
-            height: 38px;
+            height: 42px;
           }
 
           .desktop-pill-nav {
-            display: flex !important;
-            overflow-x: auto;
-            max-width: calc(100vw - 120px);
-            scrollbar-width: none;
-            -webkit-overflow-scrolling: touch;
-          }
-
-          .desktop-pill-nav::-webkit-scrollbar {
-            display: none;
+            display: none !important;
           }
 
           .btn-header {
-            display: none;
+            display: none !important;
           }
 
           .staggered-menu-mobile-container {
+            display: block !important;
+          }
+
+          .sm-toggle {
+            background-color: #7CB342 !important;
+            color: #FFFFFF !important;
+            padding: 8px 16px !important;
+            border-radius: 9999px !important;
+            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.3) !important;
+            font-size: 0.9rem !important;
+            font-weight: 700 !important;
+            letter-spacing: 0.03em !important;
+          }
+
+          .sm-toggle .sm-icon-line {
+            background-color: #FFFFFF !important;
+          }
+
+          .sm-logo {
             display: none !important;
           }
-        }
 
-        @media (max-width: 576px) {
-          .desktop-pill-nav {
-            max-width: calc(100vw - 80px);
+          .staggered-menu-header {
+            padding: 0 !important;
+            position: relative !important;
+            justify-content: flex-end !important;
+          }
+
+          .staggered-menu-wrapper {
+            position: relative !important;
+            width: auto !important;
+            height: auto !important;
           }
         }
       `}</style>
