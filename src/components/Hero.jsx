@@ -4,14 +4,12 @@ import { ArrowRight, MessageSquare, CheckCircle2 } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      <div className="container hero-container">
-        
-        {/* Left Column: Text & CTAs */}
-        <div className="hero-content-col">
-          <div className="badge-tag">
-            <span>Energia Solar Fotovoltaica</span>
-          </div>
+      {/* Solar Panel Full Background Overlay */}
+      <div className="hero-bg-overlay"></div>
 
+      <div className="container hero-container">
+        <div className="hero-content">
+          
           <h1 className="hero-title">
             Você já pensou em gerar a própria energia?
           </h1>
@@ -22,15 +20,15 @@ export default function Hero() {
 
           <div className="hero-bullets-list">
             <div className="bullet-row">
-              <CheckCircle2 size={18} className="bullet-icon" />
+              <CheckCircle2 size={20} className="bullet-icon" />
               <span>Solução personalizada para seu perfil de consumo</span>
             </div>
             <div className="bullet-row">
-              <CheckCircle2 size={18} className="bullet-icon" />
+              <CheckCircle2 size={20} className="bullet-icon" />
               <span>Equipamentos de alta tecnologia e eficiência</span>
             </div>
             <div className="bullet-row">
-              <CheckCircle2 size={18} className="bullet-icon" />
+              <CheckCircle2 size={20} className="bullet-icon" />
               <span>Projeto, instalação e homologação inclusos</span>
             </div>
           </div>
@@ -51,69 +49,73 @@ export default function Hero() {
               <span>Falar no WhatsApp</span>
             </a>
           </div>
-        </div>
 
-        {/* Right Column: Realistic Roof Solar Photo */}
-        <div className="hero-image-col">
-          <div className="hero-image-frame">
-            <img
-              src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
-              alt="Instalação de painéis solares em telhado residencial pela Onda Verde Energia Solar"
-              className="hero-img"
-            />
-          </div>
         </div>
-
       </div>
 
       <style>{`
         .hero-section {
-          padding-top: 150px;
-          padding-bottom: 80px;
-          background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
+          position: relative;
+          padding-top: 170px;
+          padding-bottom: 110px;
+          background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80');
+          background-size: cover;
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+
+        .hero-bg-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(255, 255, 255, 0.4) 100%);
+          z-index: 1;
         }
 
         .hero-container {
-          display: grid;
-          grid-template-columns: 1.05fr 0.95fr;
-          gap: 56px;
-          align-items: center;
+          position: relative;
+          z-index: 2;
         }
 
-        .hero-content-col {
+        .hero-content {
+          max-width: 680px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
         }
 
         .hero-title {
-          font-size: 3.2rem;
+          font-size: 3.4rem;
           margin-bottom: 20px;
           color: var(--text-title);
           line-height: 1.15;
+          letter-spacing: -0.02em;
         }
 
         .hero-subtitle {
-          font-size: 1.15rem;
+          font-size: 1.2rem;
           color: var(--text-body);
           line-height: 1.6;
           margin-bottom: 28px;
+          font-weight: 500;
         }
 
         .hero-bullets-list {
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 14px;
           margin-bottom: 36px;
         }
 
         .bullet-row {
           display: flex;
           align-items: center;
-          gap: 10px;
-          font-weight: 500;
-          font-size: 0.95rem;
-          color: var(--text-body);
+          gap: 12px;
+          font-weight: 600;
+          font-size: 1rem;
+          color: var(--text-title);
         }
 
         .bullet-icon {
@@ -129,47 +131,29 @@ export default function Hero() {
         }
 
         .btn-hero {
-          padding: 16px 28px;
-          font-size: 1rem;
-        }
-
-        .hero-image-col {
-          width: 100%;
-        }
-
-        .hero-image-frame {
-          border-radius: var(--radius-lg);
-          overflow: hidden;
-          box-shadow: var(--shadow-lg);
-          border: 1px solid var(--border-color);
-          background-color: #FFFFFF;
-          aspect-ratio: 4 / 3;
-        }
-
-        .hero-img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-          display: block;
+          padding: 16px 32px;
+          font-size: 1.05rem;
         }
 
         @media (max-width: 1024px) {
-          .hero-container {
-            grid-template-columns: 1fr;
-            gap: 40px;
+          .hero-bg-overlay {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.85) 100%);
           }
           .hero-title {
-            font-size: 2.5rem;
+            font-size: 2.6rem;
+          }
+          .hero-content {
+            max-width: 100%;
           }
         }
 
         @media (max-width: 640px) {
           .hero-section {
-            padding-top: 110px;
-            padding-bottom: 50px;
+            padding-top: 120px;
+            padding-bottom: 60px;
           }
           .hero-title {
-            font-size: 2rem;
+            font-size: 2.1rem;
           }
           .hero-subtitle {
             font-size: 1rem;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, MessageSquare, Instagram, ArrowUp } from 'lucide-react';
+import { MessageSquare, Instagram, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -12,17 +12,11 @@ export default function Footer() {
         
         <div className="footer-content-grid">
           
-          {/* Brand Col */}
+          {/* Official Logo Brand */}
           <div className="footer-col brand-info">
-            <div className="logo-brand">
-              <div className="logo-icon-box">
-                <Sun size={24} className="logo-sun-icon" />
-              </div>
-              <div className="logo-text-box">
-                <span className="logo-title">ONDA VERDE</span>
-                <span className="logo-sub">ENERGIA SOLAR</span>
-              </div>
-            </div>
+            <a href="#hero" className="logo-brand">
+              <img src="/logo.svg" alt="Onda Verde Energia Solar" className="footer-logo-img" />
+            </a>
 
             <p className="footer-tagline">
               Soluções inteligentes em energia solar fotovoltaica para residências, empresas e propriedades rurais.
@@ -93,6 +87,12 @@ export default function Footer() {
           gap: 40px;
           padding-bottom: 40px;
           border-bottom: 1px solid var(--border-color);
+        }
+
+        .footer-logo-img {
+          height: 44px;
+          width: auto;
+          display: block;
         }
 
         .footer-tagline {

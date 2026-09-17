@@ -27,10 +27,8 @@ export default function Solutions() {
     <section id="solutions" className="section-padding bg-subtle">
       <div className="container">
         
+        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
-          <div className="badge-tag">
-            <span>SOLUÇÕES</span>
-          </div>
           <h2>Soluções completas em energia solar</h2>
           <p>Projetos desenvolvidos sob medida para atender a necessidade de cada tipo de imóvel.</p>
         </div>
@@ -81,7 +79,7 @@ export default function Solutions() {
 
         .solution-card:hover {
           box-shadow: var(--shadow-md);
-          border-color: #D1D5DB;
+          border-color: #CBD5E1;
         }
 
         .solution-image-frame {
@@ -117,6 +115,7 @@ export default function Solutions() {
           height: 40px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
+          border: 1px solid var(--green-border);
           color: var(--green-primary);
           display: flex;
           align-items: center;

@@ -33,10 +33,8 @@ export default function Technology() {
     <section className="section-padding">
       <div className="container">
         
+        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
-          <div className="badge-tag">
-            <span>TECNOLOGIA</span>
-          </div>
           <h2>Equipamentos e tecnologia do sistema</h2>
           <p>Entenda como cada componente trabalha em conjunto para gerar energia limpa para o seu imóvel.</p>
         </div>
@@ -106,6 +104,7 @@ export default function Technology() {
           height: 42px;
           border-radius: var(--radius-sm);
           background-color: var(--green-light);
+          border: 1px solid var(--green-border);
           color: var(--green-primary);
           display: flex;
           align-items: center;

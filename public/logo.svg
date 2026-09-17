@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 95" width="200" height="95">
+  <!-- Leaf Emblem above Onda -->
+  <g transform="translate(68, 6)">
+    <!-- Outer Leaf shape -->
+    <path d="M 2,18 C 15,2 42,2 52,18 C 40,30 18,30 2,18 Z" fill="none" stroke="#7CB342" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    <!-- Leaf Center Vein -->
+    <path d="M 2,18 Q 26,14 52,18" fill="none" stroke="#454545" stroke-width="2" stroke-linecap="round" />
+    <!-- Side Veins -->
+    <path d="M 18,15 Q 24,9 30,10" fill="none" stroke="#7CB342" stroke-width="1.5" stroke-linecap="round" />
+    <path d="M 28,17 Q 34,22 40,21" fill="none" stroke="#7CB342" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <!-- Title: Onda Verde -->
+  <text x="5" y="58" font-family="'Outfit', 'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="34" fill="#454545" letter-spacing="-0.5">Onda</text>
+  <text x="96" y="58" font-family="'Outfit', 'Plus Jakarta Sans', Arial, sans-serif" font-weight="700" font-size="34" fill="#7CB342" letter-spacing="-0.5">Verde</text>
+
+  <!-- Horizontal Divider Line -->
+  <line x1="5" y1="67" x2="195" y2="67" stroke="#666666" stroke-width="1.5" />
+
+  <!-- Subtitle: e n e r g i a -->
+  <text x="100" y="82" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="500" font-size="13" fill="#666666" letter-spacing="9" text-anchor="middle">energia</text>
+</svg>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { HelpCircle, ChevronDown } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -43,10 +43,8 @@ export default function FAQSection() {
     <section id="faq" className="section-padding bg-subtle">
       <div className="container">
         
+        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
-          <div className="badge-tag">
-            <span>DÚVIDAS FREQUENTES</span>
-          </div>
           <h2>Perguntas frequentes</h2>
           <p>Esclareça as principais dúvidas sobre o funcionamento e os benefícios da energia solar.</p>
         </div>
@@ -93,7 +91,7 @@ export default function FAQSection() {
         }
 
         .faq-accordion-item:hover {
-          border-color: #D1D5DB;
+          border-color: #CBD5E1;
         }
 
         .faq-accordion-item.active {

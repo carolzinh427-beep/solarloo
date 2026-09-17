@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sun, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -26,15 +26,9 @@ export default function Header() {
     <header className={`header-root ${scrolled ? 'header-scrolled' : ''}`}>
       <div className="container header-container">
         
-        {/* Logo */}
+        {/* Official Logo */}
         <a href="#hero" className="logo-brand">
-          <div className="logo-icon-box">
-            <Sun size={24} className="logo-sun-icon" />
-          </div>
-          <div className="logo-text-box">
-            <span className="logo-title">ONDA VERDE</span>
-            <span className="logo-sub">ENERGIA SOLAR</span>
-          </div>
+          <img src="/logo.svg" alt="Onda Verde Energia Solar" className="header-logo-img" />
         </a>
 
         {/* Desktop Nav Items */}
@@ -124,45 +118,13 @@ export default function Header() {
         .logo-brand {
           display: flex;
           align-items: center;
-          gap: 10px;
           text-decoration: none;
         }
 
-        .logo-icon-box {
-          width: 40px;
-          height: 40px;
-          background-color: var(--green-light);
-          border: 1px solid var(--green-border);
-          border-radius: 10px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .logo-sun-icon {
-          color: var(--green-primary);
-        }
-
-        .logo-text-box {
-          display: flex;
-          flex-direction: column;
-        }
-
-        .logo-title {
-          font-family: var(--font-heading);
-          font-weight: 800;
-          font-size: 1.15rem;
-          color: var(--text-title);
-          line-height: 1;
-          letter-spacing: 0.02em;
-        }
-
-        .logo-sub {
-          font-size: 0.65rem;
-          font-weight: 700;
-          color: var(--green-primary);
-          letter-spacing: 0.15em;
-          margin-top: 3px;
+        .header-logo-img {
+          height: 48px;
+          width: auto;
+          display: block;
         }
 
         .desktop-nav {

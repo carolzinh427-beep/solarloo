@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Calculator, CheckCircle2, MessageSquare, AlertCircle, ArrowRight } from 'lucide-react';
+import { CheckCircle2, MessageSquare, AlertCircle, ArrowRight } from 'lucide-react';
 
 export default function SolarSimulator() {
   const [billRange, setBillRange] = useState('R$500 a R$1.000');
@@ -27,10 +27,8 @@ export default function SolarSimulator() {
     <section id="simulation" className="section-padding bg-subtle">
       <div className="container">
         
+        {/* Section Header (NO BADGES AS REQUESTED) */}
         <div className="section-header">
-          <div className="badge-tag">
-            <span>SIMULAÇÃO SIMPLES</span>
-          </div>
           <h2>Calcule uma estimativa inicial de economia</h2>
           <p>Selecione a faixa de valor da sua conta atual e o tipo do seu imóvel para consultar a estimativa inicial.</p>
         </div>
@@ -84,7 +82,13 @@ export default function SolarSimulator() {
 
             {/* Outcome Display Box */}
             <div className="simulator-result-box">
-              <span className="res-tag">Estimativa Inicial Calculada</span>
+              <div className="sim-res-img-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80"
+                  alt="Painéis Solares Onda Verde"
+                  className="sim-res-img"
+                />
+              </div>
 
               <div className="res-hero">
                 <span className="res-subtitle">Potencial de Economia Estimada:</span>
@@ -95,7 +99,7 @@ export default function SolarSimulator() {
               <div className="res-disclaimer">
                 <AlertCircle size={18} className="disclaimer-icon" />
                 <p>
-                  <strong>Aviso importante:</strong> Este valor é uma <strong>estimativa inicial</strong> com fins de referência. O dimensionamento real dos equipamentos e a economia exata dependem de uma análise técnica detalhada do local, orientação solar do telhado e padrão de consumo.
+                  <strong>Aviso importante:</strong> Este valor é uma <strong>estimativa inicial</strong> com fins de referência. O dimensionamento real dos equipamentos e a economia exata dependem de uma análise técnica detalhada do local.
                 </p>
               </div>
 
@@ -201,18 +205,24 @@ export default function SolarSimulator() {
           background-color: var(--bg-subtle);
           border: 1px solid var(--border-color);
           border-radius: var(--radius-md);
-          padding: 28px;
+          padding: 24px;
           display: flex;
           flex-direction: column;
-          gap: 18px;
+          gap: 16px;
         }
 
-        .res-tag {
-          font-size: 0.75rem;
-          font-weight: 700;
-          color: var(--green-primary);
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
+        .sim-res-img-frame {
+          width: 100%;
+          aspect-ratio: 16 / 9;
+          border-radius: var(--radius-sm);
+          overflow: hidden;
+        }
+
+        .sim-res-img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
         }
 
         .res-hero {
