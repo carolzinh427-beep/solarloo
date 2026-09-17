@@ -6,8 +6,8 @@
   /* Official Brand Colors */
   --green-primary: #7CB342;
   --green-hover: #689F38;
-  --green-light: #F4F9EC;
-  --green-border: #DCEDC8;
+  --green-light: #DCEEC2;
+  --green-border: #C5E1A5;
   
   --charcoal-primary: #333333;
   --charcoal-dark: #222222;
@@ -15,7 +15,7 @@
   
   /* Neutral Palette: White, Black, Gray, Light Green */
   --bg-main: #FFFFFF;
-  --bg-subtle: #F4F9EC;
+  --bg-subtle: #DCEEC2;
   --bg-surface: #FFFFFF;
   
   --text-title: #222222;

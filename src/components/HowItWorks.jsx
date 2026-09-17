@@ -90,7 +90,7 @@ export default function HowItWorks() {
 
       <style>{`
         #how-it-works {
-          background-color: #F4F9EC !important;
+          background-color: var(--green-light, #DCEEC2) !important;
         }
 
         .stepper-wrapper {
