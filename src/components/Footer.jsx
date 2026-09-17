@@ -1,5 +1,5 @@
 import React from 'react';
-import { Sun, Zap, ShieldCheck, Heart, ArrowUp } from 'lucide-react';
+import { Sun, MessageSquare, Instagram, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -7,77 +7,73 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer-wrapper">
+    <footer id="contact" className="footer-root">
       <div className="container">
         
-        <div className="footer-top">
+        <div className="footer-content-grid">
           
-          {/* Brand Info */}
-          <div className="footer-col brand-col">
-            <div className="logo">
-              <div className="logo-icon">
-                <Sun className="icon-sun" size={24} />
-                <Zap className="icon-zap" size={14} />
+          {/* Brand Col */}
+          <div className="footer-col brand-info">
+            <div className="logo-brand">
+              <div className="logo-icon-box">
+                <Sun size={24} className="logo-sun-icon" />
               </div>
-              <div className="logo-text">
-                <span className="brand-name">ONDA VERDE</span>
-                <span className="brand-sub">ENERGIA SOLAR</span>
+              <div className="logo-text-box">
+                <span className="logo-title">ONDA VERDE</span>
+                <span className="logo-sub">ENERGIA SOLAR</span>
               </div>
             </div>
 
-            <p className="footer-brand-desc">
-              Conectando residências, empresas e o agronegócio à energia limpa e sustentável. Reduza até 95% da sua conta de luz com garantia e segurança total.
+            <p className="footer-tagline">
+              Soluções inteligentes em energia solar fotovoltaica para residências, empresas e propriedades rurais.
             </p>
-
-            <div className="cert-badges">
-              <span className="cert-badge"><ShieldCheck size={14} /> ANEEL</span>
-              <span className="cert-badge"><ShieldCheck size={14} /> INMETRO</span>
-              <span className="cert-badge"><ShieldCheck size={14} /> CREA-SP/MG</span>
-            </div>
           </div>
 
           {/* Quick Links */}
           <div className="footer-col">
-            <h4>Navegação</h4>
-            <ul>
+            <h4 className="footer-heading">Navegação</h4>
+            <ul className="footer-links">
               <li><a href="#hero">Início</a></li>
-              <li><a href="#calculator">Calculadora Solar</a></li>
-              <li><a href="#services">Nossos Serviços</a></li>
-              <li><a href="#projects">Portfólio de Projetos</a></li>
-              <li><a href="#financing">Financiamento</a></li>
+              <li><a href="#solutions">Energia Solar</a></li>
+              <li><a href="#how-it-works">Como Funciona</a></li>
+              <li><a href="#simulation">Simulação</a></li>
+              <li><a href="#faq">FAQ</a></li>
             </ul>
           </div>
 
-          {/* Solutions */}
+          {/* Official Contact Info */}
           <div className="footer-col">
-            <h4>Soluções</h4>
-            <ul>
-              <li><a href="#services">Solar Residencial</a></li>
-              <li><a href="#services">Solar Comercial</a></li>
-              <li><a href="#services">Solar para Agronegócio</a></li>
-              <li><a href="#services">Estações de Recarga EV</a></li>
-              <li><a href="#services">Monitoramento 24/7</a></li>
-            </ul>
-          </div>
+            <h4 className="footer-heading">Contato</h4>
+            <div className="contact-list">
+              <a
+                href="https://wa.me/5511924891417"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-item-link"
+              >
+                <MessageSquare size={18} className="contact-icon" />
+                <span>WhatsApp: (11) 92489-1417</span>
+              </a>
 
-          {/* Institutional & Legal */}
-          <div className="footer-col">
-            <h4>Institucional</h4>
-            <ul>
-              <li><a href="#why-us">Por Que a Onda Verde?</a></li>
-              <li><a href="#testimonials">Depoimentos de Clientes</a></li>
-              <li><a href="#faq">Perguntas Frequentes</a></li>
-              <li><a href="#contact">Central de Ajuda</a></li>
-              <li><a href="#contact">Política de Privacidade</a></li>
-            </ul>
+              <a
+                href="https://www.instagram.com/ondaverdeenergia/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-item-link"
+              >
+                <Instagram size={18} className="contact-icon" />
+                <span>Instagram: @ondaverdeenergia</span>
+              </a>
+            </div>
           </div>
 
         </div>
 
+        {/* Bottom Bar */}
         <div className="footer-bottom">
-          <p>© {new Date().getFullYear()} Onda Verde Energia Solar Ltda. CNPJ 38.902.112/0001-89. Todos os direitos reservados.</p>
+          <p>© {new Date().getFullYear()} Onda Verde Energia Solar. Todos os direitos reservados.</p>
           
-          <button className="scroll-top-btn" onClick={scrollToTop} aria-label="Voltar ao topo">
+          <button className="scroll-top-button" onClick={scrollToTop} aria-label="Voltar ao topo">
             <ArrowUp size={18} />
           </button>
         </div>
@@ -85,110 +81,112 @@ export default function Footer() {
       </div>
 
       <style>{`
-        .footer-wrapper {
-          background: rgba(4, 10, 18, 0.98);
-          border-top: 1px solid var(--border-glass);
-          padding: 70px 0 30px 0;
-          color: var(--text-muted);
-          font-size: 0.9rem;
+        .footer-root {
+          background-color: #FFFFFF;
+          border-top: 1px solid var(--border-color);
+          padding: 60px 0 30px 0;
         }
 
-        .footer-top {
+        .footer-content-grid {
           display: grid;
-          grid-template-columns: 1.5fr 1fr 1fr 1fr;
+          grid-template-columns: 1.5fr 1fr 1.2fr;
           gap: 40px;
-          padding-bottom: 50px;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+          padding-bottom: 40px;
+          border-bottom: 1px solid var(--border-color);
         }
 
-        .footer-brand-desc {
-          margin: 16px 0 20px 0;
-          line-height: 1.6;
+        .footer-tagline {
+          margin-top: 16px;
+          font-size: 0.92rem;
+          color: var(--text-muted);
+          line-height: 1.5;
+          max-width: 320px;
         }
 
-        .cert-badges {
-          display: flex;
-          gap: 8px;
-          flex-wrap: wrap;
-        }
-
-        .cert-badge {
-          display: flex;
-          align-items: center;
-          gap: 4px;
-          background: rgba(0, 230, 118, 0.1);
-          border: 1px solid rgba(0, 230, 118, 0.2);
-          color: var(--green-primary);
-          font-size: 0.75rem;
-          font-weight: 700;
-          padding: 4px 10px;
-          border-radius: 6px;
-        }
-
-        .footer-col h4 {
+        .footer-heading {
           font-size: 1rem;
-          color: var(--text-main);
-          margin-bottom: 18px;
+          color: var(--text-title);
+          margin-bottom: 16px;
         }
 
-        .footer-col ul {
+        .footer-links {
           list-style: none;
           display: flex;
           flex-direction: column;
           gap: 10px;
         }
 
-        .footer-col a {
-          color: var(--text-muted);
+        .footer-links a {
+          color: var(--text-body);
           text-decoration: none;
-          transition: color 0.2s;
+          font-size: 0.92rem;
+          font-weight: 500;
+          transition: color 0.2s ease;
         }
 
-        .footer-col a:hover {
+        .footer-links a:hover {
           color: var(--green-primary);
+        }
+
+        .contact-list {
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+        }
+
+        .contact-item-link {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          color: var(--text-body);
+          text-decoration: none;
+          font-size: 0.92rem;
+          font-weight: 500;
+          transition: color 0.2s ease;
+        }
+
+        .contact-item-link:hover {
+          color: var(--green-primary);
+        }
+
+        .contact-icon {
+          color: var(--green-primary);
+          flex-shrink: 0;
         }
 
         .footer-bottom {
           display: flex;
-          justify-content: space-between;
           align-items: center;
+          justify-content: space-between;
           padding-top: 24px;
-          font-size: 0.8rem;
+          font-size: 0.85rem;
+          color: var(--text-muted);
         }
 
-        .scroll-top-btn {
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid var(--border-glass);
-          color: var(--text-main);
+        .scroll-top-button {
+          width: 38px;
+          height: 38px;
+          border-radius: var(--radius-sm);
+          background-color: var(--bg-subtle);
+          border: 1px solid var(--border-color);
+          color: var(--text-title);
           display: flex;
           align-items: center;
           justify-content: center;
           cursor: pointer;
-          transition: all 0.25s;
+          transition: all 0.2s ease;
         }
 
-        .scroll-top-btn:hover {
-          background: var(--green-primary);
-          color: #05130B;
+        .scroll-top-button:hover {
+          background-color: var(--green-light);
+          border-color: var(--green-border);
+          color: var(--green-primary);
         }
 
-        @media (max-width: 1024px) {
-          .footer-top {
-            grid-template-columns: 1fr 1fr;
-          }
-        }
-
-        @media (max-width: 640px) {
-          .footer-top {
+        @media (max-width: 900px) {
+          .footer-content-grid {
             grid-template-columns: 1fr;
-          }
-          .footer-bottom {
-            flex-direction: column;
-            gap: 16px;
-            text-align: center;
+            gap: 32px;
           }
         }
       `}</style>

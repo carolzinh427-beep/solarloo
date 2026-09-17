@@ -1,394 +1,181 @@
 import React from 'react';
-import { Sun, Zap, ShieldCheck, ArrowRight, TrendingDown, CheckCircle2, MessageSquare } from 'lucide-react';
+import { ArrowRight, MessageSquare, CheckCircle2 } from 'lucide-react';
 
-export default function Hero({ onOpenProposalModal }) {
+export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      <div className="bg-glow-green" style={{ top: '10%', left: '-100px' }}></div>
-      <div className="bg-glow-cyan" style={{ top: '30%', right: '-150px' }}></div>
-
       <div className="container hero-container">
-        {/* Left Content Column */}
-        <div className="hero-content">
-          <div className="badge-eco animate-float">
-            <Sun size={16} className="highlight-green" />
-            <span>ENERGIA RENOVÁVEL DO FUTURO HOJE</span>
+        
+        {/* Left Column: Text & CTAs */}
+        <div className="hero-content-col">
+          <div className="badge-tag">
+            <span>Energia Solar Fotovoltaica</span>
           </div>
 
           <h1 className="hero-title">
-            Transforme a Luz do Sol em <span className="text-gradient-green">Economia de até 95%</span> na sua Conta
+            Você já pensou em gerar a própria energia?
           </h1>
 
           <p className="hero-subtitle">
-            A <strong>Onda Verde Energia Solar</strong> projeta, instala e monitora sistemas fotovoltaicos 
-            de altíssima eficiência para sua casa, empresa ou agronegócio. Pague a parcela com a própria economia da conta!
+            Produza sua própria eletricidade com energia solar, reduza os custos da sua conta de luz e garanta previsibilidade financeira para o seu imóvel ou empresa.
           </p>
 
-          {/* Key Bullet Points */}
-          <div className="hero-bullets">
-            <div className="bullet-item">
-              <CheckCircle2 size={18} className="highlight-green" />
-              <span>Garantia de 25 Anos nos Painéis</span>
+          <div className="hero-bullets-list">
+            <div className="bullet-row">
+              <CheckCircle2 size={18} className="bullet-icon" />
+              <span>Solução personalizada para seu perfil de consumo</span>
             </div>
-            <div className="bullet-item">
-              <CheckCircle2 size={18} className="highlight-green" />
-              <span>Sem Entrada & Até 120x para Pagar</span>
+            <div className="bullet-row">
+              <CheckCircle2 size={18} className="bullet-icon" />
+              <span>Equipamentos de alta tecnologia e eficiência</span>
             </div>
-            <div className="bullet-item">
-              <CheckCircle2 size={18} className="highlight-green" />
-              <span>Engenharia Própria Sem Terceirização</span>
+            <div className="bullet-row">
+              <CheckCircle2 size={18} className="bullet-icon" />
+              <span>Projeto, instalação e homologação inclusos</span>
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="hero-cta-group">
-            <button className="btn-primary btn-hero" onClick={onOpenProposalModal}>
-              <span>Simular Minha Economia Agora</span>
-              <ArrowRight size={20} />
-            </button>
-            
-            <a 
-              href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Vim%20pelo%20site%20da%20Onda%20Verde%20e%20quero%20um%20or%C3%A7amento%20personalizado."
-              target="_blank" 
+          <div className="hero-buttons-group">
+            <a href="#simulation" className="btn-primary btn-hero">
+              <span>Simular minha economia</span>
+              <ArrowRight size={18} />
+            </a>
+
+            <a
+              href="https://wa.me/5511924891417?text=Ol%C3%A1!%20Gostaria%20de%20saber%20mais%20sobre%20energia%20solar%20com%20a%20Onda%20Verde."
+              target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary btn-hero btn-whatsapp"
             >
-              <MessageSquare size={20} />
-              <span>Atendimento WhatsApp</span>
+              <MessageSquare size={18} />
+              <span>Falar no WhatsApp</span>
             </a>
           </div>
+        </div>
 
-          {/* Trust Ratings Pill */}
-          <div className="trust-pill">
-            <div className="avatar-group">
-              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=100&q=80" alt="Cliente" className="avatar" />
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&q=80" alt="Cliente" className="avatar" />
-              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&q=80" alt="Cliente" className="avatar" />
-            </div>
-            <div className="trust-text">
-              <div className="stars">★★★★★ <span>4.9/5 (1.200+ Clientes)</span></div>
-              <p>Economizando mais de R$ 18 Milhões por ano</p>
-            </div>
+        {/* Right Column: Realistic Roof Solar Photo */}
+        <div className="hero-image-col">
+          <div className="hero-image-frame">
+            <img
+              src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1200&q=80"
+              alt="Instalação de painéis solares em telhado residencial pela Onda Verde Energia Solar"
+              className="hero-img"
+            />
           </div>
         </div>
 
-        {/* Right Graphic / Interactive Showcase */}
-        <div className="hero-graphic-col">
-          <div className="glass-card hero-main-card">
-            {/* Visual Solar System Badge */}
-            <div className="hero-card-header">
-              <div className="status-dot"></div>
-              <span>Monitoramento Inteligente 24/7 Ativo</span>
-              <span className="live-tag">AO VIVO</span>
-            </div>
-
-            <div className="hero-card-image-wrap">
-              <img 
-                src="https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=800&q=80" 
-                alt="Instalação Solar Onda Verde" 
-                className="hero-card-img"
-              />
-              <div className="image-overlay-glow"></div>
-            </div>
-
-            {/* Floating Metric Badges */}
-            <div className="floating-badge badge-top-right">
-              <div className="icon-wrap green">
-                <TrendingDown size={20} />
-              </div>
-              <div>
-                <span className="badge-label">Redução na Conta</span>
-                <span className="badge-value">-95%</span>
-              </div>
-            </div>
-
-            <div className="floating-badge badge-bottom-left">
-              <div className="icon-wrap gold">
-                <Sun size={20} />
-              </div>
-              <div>
-                <span className="badge-label">Geração Mensal Est.</span>
-                <span className="badge-value">1.450 kWh</span>
-              </div>
-            </div>
-
-            {/* Simulated Live Generation Meter */}
-            <div className="live-meter-card">
-              <div className="meter-info">
-                <span>Produção Solar Hoje</span>
-                <span className="highlight-green">48.2 kWh</span>
-              </div>
-              <div className="meter-bar-track">
-                <div className="meter-bar-fill" style={{ width: '88%' }}></div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
       <style>{`
         .hero-section {
-          position: relative;
-          padding-top: 170px;
-          padding-bottom: 100px;
-          overflow: hidden;
-          background: radial-gradient(circle at 50% 20%, rgba(10, 25, 47, 0.8) 0%, var(--bg-primary) 100%);
+          padding-top: 150px;
+          padding-bottom: 80px;
+          background: linear-gradient(180deg, #FFFFFF 0%, var(--bg-subtle) 100%);
         }
 
         .hero-container {
           display: grid;
-          grid-template-columns: 1.1fr 0.9fr;
-          gap: 60px;
+          grid-template-columns: 1.05fr 0.95fr;
+          gap: 56px;
           align-items: center;
-          position: relative;
-          z-index: 2;
         }
 
-        .hero-content {
+        .hero-content-col {
           display: flex;
           flex-direction: column;
-          gap: 24px;
+          align-items: flex-start;
         }
 
         .hero-title {
-          font-size: 3.4rem;
-          letter-spacing: -1px;
+          font-size: 3.2rem;
+          margin-bottom: 20px;
+          color: var(--text-title);
           line-height: 1.15;
         }
 
         .hero-subtitle {
-          font-size: 1.2rem;
-          color: var(--text-muted);
+          font-size: 1.15rem;
+          color: var(--text-body);
           line-height: 1.6;
+          margin-bottom: 28px;
         }
 
-        .hero-bullets {
+        .hero-bullets-list {
           display: flex;
           flex-direction: column;
           gap: 12px;
+          margin-bottom: 36px;
         }
 
-        .bullet-item {
+        .bullet-row {
           display: flex;
           align-items: center;
           gap: 10px;
-          font-weight: 600;
-          color: var(--text-main);
+          font-weight: 500;
+          font-size: 0.95rem;
+          color: var(--text-body);
         }
 
-        .hero-cta-group {
+        .bullet-icon {
+          color: var(--green-primary);
+          flex-shrink: 0;
+        }
+
+        .hero-buttons-group {
           display: flex;
           gap: 16px;
+          width: 100%;
           flex-wrap: wrap;
-          margin-top: 10px;
         }
 
         .btn-hero {
-          padding: 16px 32px;
-          font-size: 1.1rem;
+          padding: 16px 28px;
+          font-size: 1rem;
         }
 
-        .trust-pill {
-          display: flex;
-          align-items: center;
-          gap: 16px;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid var(--border-glass);
-          padding: 12px 20px;
-          border-radius: 50px;
-          width: fit-content;
-          margin-top: 10px;
+        .hero-image-col {
+          width: 100%;
         }
 
-        .avatar-group {
-          display: flex;
-        }
-
-        .avatar {
-          width: 38px;
-          height: 38px;
-          border-radius: 50%;
-          border: 2px solid var(--bg-primary);
-          margin-left: -10px;
-        }
-
-        .avatar:first-child {
-          margin-left: 0;
-        }
-
-        .trust-text .stars {
-          color: #FFD600;
-          font-size: 0.95rem;
-          font-weight: 700;
-        }
-
-        .trust-text p {
-          font-size: 0.8rem;
-          color: var(--text-muted);
-          margin-top: 2px;
-        }
-
-        /* Right Graphic Styles */
-        .hero-graphic-col {
-          position: relative;
-        }
-
-        .hero-main-card {
-          padding: 20px;
-        }
-
-        .hero-card-header {
-          display: flex;
-          align-items: center;
-          gap: 10px;
-          font-size: 0.85rem;
-          color: var(--text-muted);
-          margin-bottom: 16px;
-        }
-
-        .status-dot {
-          width: 10px;
-          height: 10px;
-          background: var(--green-primary);
-          border-radius: 50%;
-          box-shadow: 0 0 10px var(--green-primary);
-          animation: pulseGlow 2s infinite;
-        }
-
-        .live-tag {
-          margin-left: auto;
-          background: rgba(0, 230, 118, 0.2);
-          color: var(--green-primary);
-          padding: 2px 8px;
-          border-radius: 6px;
-          font-size: 0.75rem;
-          font-weight: 800;
-        }
-
-        .hero-card-image-wrap {
-          position: relative;
-          border-radius: 14px;
+        .hero-image-frame {
+          border-radius: var(--radius-lg);
           overflow: hidden;
-          aspect-ratio: 16 / 10;
+          box-shadow: var(--shadow-lg);
+          border: 1px solid var(--border-color);
+          background-color: #FFFFFF;
+          aspect-ratio: 4 / 3;
         }
 
-        .hero-card-img {
+        .hero-img {
           width: 100%;
           height: 100%;
           object-fit: cover;
-          transition: transform 0.5s ease;
-        }
-
-        .hero-card-image-wrap:hover .hero-card-img {
-          transform: scale(1.05);
-        }
-
-        .floating-badge {
-          position: absolute;
-          background: rgba(10, 25, 47, 0.88);
-          backdrop-filter: blur(12px);
-          border: 1px solid var(--border-glass-bright);
-          padding: 12px 18px;
-          border-radius: 16px;
-          display: flex;
-          align-items: center;
-          gap: 12px;
-          box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .badge-top-right {
-          top: 30px;
-          right: -20px;
-        }
-
-        .badge-bottom-left {
-          bottom: 80px;
-          left: -20px;
-        }
-
-        .icon-wrap {
-          width: 40px;
-          height: 40px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .icon-wrap.green {
-          background: rgba(0, 230, 118, 0.2);
-          color: var(--green-primary);
-        }
-
-        .icon-wrap.gold {
-          background: rgba(255, 214, 0, 0.2);
-          color: #FFD600;
-        }
-
-        .badge-label {
           display: block;
-          font-size: 0.75rem;
-          color: var(--text-muted);
-        }
-
-        .badge-value {
-          font-family: var(--font-heading);
-          font-size: 1.1rem;
-          font-weight: 800;
-          color: var(--text-main);
-        }
-
-        .live-meter-card {
-          margin-top: 16px;
-          background: rgba(255, 255, 255, 0.03);
-          border-radius: 12px;
-          padding: 14px;
-        }
-
-        .meter-info {
-          display: flex;
-          justify-content: space-between;
-          font-size: 0.9rem;
-          font-weight: 600;
-          margin-bottom: 8px;
-        }
-
-        .meter-bar-track {
-          height: 8px;
-          background: rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-          overflow: hidden;
-        }
-
-        .meter-bar-fill {
-          height: 100%;
-          background: linear-gradient(90deg, #00E676 0%, #00B4D8 100%);
-          border-radius: 10px;
-          box-shadow: 0 0 10px rgba(0, 230, 118, 0.8);
         }
 
         @media (max-width: 1024px) {
           .hero-container {
             grid-template-columns: 1fr;
-            text-align: center;
+            gap: 40px;
           }
           .hero-title {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
           }
-          .hero-bullets {
-            align-items: center;
+        }
+
+        @media (max-width: 640px) {
+          .hero-section {
+            padding-top: 110px;
+            padding-bottom: 50px;
           }
-          .hero-cta-group {
-            justify-content: center;
+          .hero-title {
+            font-size: 2rem;
           }
-          .trust-pill {
-            margin: 0 auto;
+          .hero-subtitle {
+            font-size: 1rem;
           }
-          .badge-top-right {
-            right: 0;
-          }
-          .badge-bottom-left {
-            left: 0;
+          .hero-buttons-group {
+            flex-direction: column;
           }
         }
       `}</style>
