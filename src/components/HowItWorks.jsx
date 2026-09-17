@@ -8,28 +8,28 @@ export default function HowItWorks() {
       title: 'Análise do consumo',
       description: 'Avaliamos seu histórico para entender a necessidade exata do seu imóvel.',
       icon: <Search size={18} />,
-      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80',
     },
     {
       number: '02',
       title: 'Dimensionamento',
       description: 'Elaboramos o projeto técnico personalizado com os equipamentos ideais.',
       icon: <Compass size={18} />,
-      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80',
     },
     {
       number: '03',
       title: 'Instalação técnica',
       description: 'Montagem dos painéis e estruturas com rigor técnico e total segurança.',
       icon: <Wrench size={18} />,
-      image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1624397640148-949b1732bb0a?auto=format&fit=crop&w=800&q=80',
     },
     {
       number: '04',
       title: 'Geração de energia',
       description: 'Seu sistema entra em operação e você começa a produzir sua eletricidade.',
       icon: <Zap size={18} />,
-      image: 'https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=600&q=80',
+      image: 'https://images.unsplash.com/photo-1508873696983-2df515122519?auto=format&fit=crop&w=800&q=80',
     },
   ];
 
@@ -46,7 +46,7 @@ export default function HowItWorks() {
           {steps.map((step, idx) => (
             <div key={idx} className="timeline-item">
               <div className="step-image-frame">
-                <img src={step.image} alt={step.title} className="step-img" />
+                <img src={step.image} alt={`Etapa ${step.number}: ${step.title}`} className="step-img" />
                 <span className="step-num-badge">{step.number}</span>
               </div>
 
@@ -112,6 +112,7 @@ export default function HowItWorks() {
           font-size: 0.8rem;
           padding: 2px 8px;
           border-radius: 12px;
+          z-index: 2;
         }
 
         .step-body {

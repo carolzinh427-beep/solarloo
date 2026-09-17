@@ -6,7 +6,6 @@ import HowItWorks from './components/HowItWorks';
 import Solutions from './components/Solutions';
 import Technology from './components/Technology';
 import SolarSimulator from './components/SolarSimulator';
-import TrustSection from './components/TrustSection';
 import FAQSection from './components/FAQSection';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -22,7 +21,6 @@ export default function App() {
         <Solutions />
         <Technology />
         <SolarSimulator />
-        <TrustSection />
         <FAQSection />
         <FinalCTA />
       </main>

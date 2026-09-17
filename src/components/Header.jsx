@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Phone } from 'lucide-react';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -24,43 +24,66 @@ export default function Header() {
 
   return (
     <header className={`header-root ${scrolled ? 'header-scrolled' : ''}`}>
-      <div className="container header-container">
-        
-        {/* Official Logo */}
-        <a href="#hero" className="logo-brand">
-          <img src="/logo.svg" alt="Onda Verde Energia Solar" className="header-logo-img" />
-        </a>
-
-        {/* Desktop Nav Items */}
-        <nav className="desktop-nav">
-          <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.label}>
-                <a href={item.href} className="nav-item-link">
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Action Button */}
-        <div className="header-actions">
-          <a href="#simulation" className="btn-primary btn-header">
-            <span>Simular economia</span>
-            <ArrowRight size={16} />
-          </a>
-          
-          <button
-            className="mobile-hamburger"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Menu principal"
-            aria-expanded={mobileMenuOpen}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+      {/* Top Bar em Verde Claro Acima do Header */}
+      <div className="top-bar-green">
+        <div className="container top-bar-container">
+          <div className="top-bar-left">
+            <span className="top-bar-text">Atendimento Comercial • Soluções em Energia Solar</span>
+          </div>
+          <div className="top-bar-right">
+            <a
+              href="https://wa.me/5511924891417"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="top-bar-wa-link"
+            >
+              <Phone size={13} />
+              <span>(11) 92489-1417</span>
+            </a>
+          </div>
         </div>
+      </div>
 
+      {/* Main Navbar */}
+      <div className="main-navbar">
+        <div className="container header-container">
+          
+          {/* Official Logo */}
+          <a href="#hero" className="logo-brand">
+            <img src="/logo.svg" alt="Onda Verde Energia Solar" className="header-logo-img" />
+          </a>
+
+          {/* Desktop Nav Items */}
+          <nav className="desktop-nav">
+            <ul className="nav-list">
+              {navItems.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} className="nav-item-link">
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          {/* Action Button */}
+          <div className="header-actions">
+            <a href="#simulation" className="btn-primary btn-header">
+              <span>Simular economia</span>
+              <ArrowRight size={16} />
+            </a>
+            
+            <button
+              className="mobile-hamburger"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Menu principal"
+              aria-expanded={mobileMenuOpen}
+            >
+              {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+
+        </div>
       </div>
 
       {/* Mobile Menu Drawer */}
@@ -99,20 +122,57 @@ export default function Header() {
           width: 100%;
           z-index: 1000;
           background-color: #FFFFFF;
-          border-bottom: 1px solid var(--border-color);
           transition: all 0.25s ease;
         }
 
         .header-scrolled {
           box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-          border-bottom-color: transparent;
+        }
+
+        /* Top Bar Verde Claro */
+        .top-bar-green {
+          background-color: var(--green-light);
+          border-bottom: 1px solid var(--green-border);
+          padding: 6px 0;
+          font-size: 0.82rem;
+          color: var(--charcoal-primary);
+        }
+
+        .top-bar-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+
+        .top-bar-text {
+          font-weight: 600;
+          color: var(--charcoal-primary);
+        }
+
+        .top-bar-wa-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          color: var(--green-hover);
+          font-weight: 700;
+          text-decoration: none;
+          transition: opacity 0.2s;
+        }
+
+        .top-bar-wa-link:hover {
+          opacity: 0.85;
+        }
+
+        .main-navbar {
+          background-color: #FFFFFF;
+          border-bottom: 1px solid var(--border-color);
         }
 
         .header-container {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          height: 80px;
+          height: 72px;
         }
 
         .logo-brand {
@@ -122,7 +182,7 @@ export default function Header() {
         }
 
         .header-logo-img {
-          height: 48px;
+          height: 44px;
           width: auto;
           display: block;
         }
