@@ -113,7 +113,7 @@ export default function Header() {
         }
 
         .header-scrolled {
-          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+          box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         }
 
         /* Top Bar Verde Claro */
@@ -160,12 +160,14 @@ export default function Header() {
           align-items: center;
           justify-content: space-between;
           height: 72px;
+          gap: 12px;
         }
 
         .logo-brand {
           display: flex;
           align-items: center;
           text-decoration: none;
+          flex-shrink: 0;
         }
 
         .header-logo-img {
@@ -174,32 +176,11 @@ export default function Header() {
           display: block;
         }
 
-        .desktop-nav {
-          display: flex;
-        }
-
-        .nav-list {
-          display: flex;
-          list-style: none;
-          gap: 32px;
-        }
-
-        .nav-item-link {
-          color: var(--text-body);
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 0.95rem;
-          transition: color 0.2s ease;
-        }
-
-        .nav-item-link:hover {
-          color: var(--green-primary);
-        }
-
         .header-actions {
           display: flex;
           align-items: center;
           gap: 16px;
+          flex-shrink: 0;
         }
 
         .btn-header {
@@ -209,21 +190,51 @@ export default function Header() {
 
         .desktop-pill-nav {
           display: flex;
+          align-items: center;
         }
 
         .staggered-menu-mobile-container {
           display: none;
         }
 
+        /* Mobile specific adjustments */
         @media (max-width: 992px) {
+          .top-bar-green {
+            display: none !important;
+          }
+
+          .header-container {
+            height: 64px;
+          }
+
+          .header-logo-img {
+            height: 38px;
+          }
+
           .desktop-pill-nav {
+            display: flex !important;
+            overflow-x: auto;
+            max-width: calc(100vw - 120px);
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .desktop-pill-nav::-webkit-scrollbar {
             display: none;
           }
+
           .btn-header {
             display: none;
           }
+
           .staggered-menu-mobile-container {
-            display: block;
+            display: none !important;
+          }
+        }
+
+        @media (max-width: 576px) {
+          .desktop-pill-nav {
+            max-width: calc(100vw - 80px);
           }
         }
       `}</style>
