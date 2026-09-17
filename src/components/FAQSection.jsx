@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'motion/react';
 
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState(0);
@@ -49,24 +50,61 @@ export default function FAQSection() {
         </div>
 
         <div className="faq-accordion-wrap">
-          {faqs.map((faq, idx) => (
-            <div
-              key={idx}
-              className={`faq-accordion-item ${openIndex === idx ? 'active' : ''}`}
-              onClick={() => setOpenIndex(openIndex === idx ? -1 : idx)}
-            >
-              <div className="faq-question-btn">
-                <h3 className="faq-q-text">{faq.q}</h3>
-                <ChevronDown size={20} className="faq-icon-arrow" />
-              </div>
-
-              {openIndex === idx && (
-                <div className="faq-answer-box">
-                  <p>{faq.a}</p>
+          {faqs.map((faq, idx) => {
+            const isOpen = openIndex === idx;
+            return (
+              <motion.div
+                key={idx}
+                initial={false}
+                animate={{
+                  backgroundColor: isOpen ? '#7CB342' : '#F1F8E9',
+                  borderColor: isOpen ? '#558B2F' : '#7CB342',
+                  scale: isOpen ? 1.01 : 1,
+                }}
+                transition={{ duration: 0.25, ease: 'easeInOut' }}
+                className={`faq-accordion-item ${isOpen ? 'active' : ''}`}
+                onClick={() => setOpenIndex(isOpen ? -1 : idx)}
+                role="button"
+                aria-expanded={isOpen}
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    setOpenIndex(isOpen ? -1 : idx);
+                  }
+                }}
+              >
+                <div className="faq-question-btn">
+                  <h3 className={`faq-q-text ${isOpen ? 'text-white' : 'text-green-dark'}`}>
+                    {faq.q}
+                  </h3>
+                  <div className={`faq-icon-wrapper ${isOpen ? 'bg-white-20' : 'bg-green-light'}`}>
+                    <ChevronDown
+                      size={20}
+                      className={`faq-icon-arrow ${isOpen ? 'rotate-180 text-white' : 'text-green-primary'}`}
+                    />
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+
+                <AnimatePresence initial={false}>
+                  {isOpen && (
+                    <motion.div
+                      key="content"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: 'auto', opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: 'easeInOut' }}
+                      style={{ overflow: 'hidden' }}
+                    >
+                      <div className="faq-answer-box">
+                        <p>{faq.a}</p>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.div>
+            );
+          })}
         </div>
 
       </div>
@@ -77,24 +115,23 @@ export default function FAQSection() {
           margin: 0 auto;
           display: flex;
           flex-direction: column;
-          gap: 12px;
+          gap: 14px;
         }
 
         .faq-accordion-item {
-          background-color: #FFFFFF;
-          border: 1px solid var(--border-color);
-          border-radius: var(--radius-md);
+          border-width: 2px;
+          border-style: solid;
+          border-radius: var(--radius-lg);
           padding: 20px 24px;
           cursor: pointer;
-          transition: all 0.2s ease;
+          transition: box-shadow 0.25s ease, transform 0.2s ease;
+          box-shadow: 0 4px 12px rgba(124, 179, 66, 0.08);
+          user-select: none;
         }
 
         .faq-accordion-item:hover {
-          border-color: #CBD5E1;
-        }
-
-        .faq-accordion-item.active {
-          border-color: var(--green-primary);
+          box-shadow: 0 8px 20px rgba(124, 179, 66, 0.2);
+          transform: translateY(-1px);
         }
 
         .faq-question-btn {
@@ -105,31 +142,71 @@ export default function FAQSection() {
         }
 
         .faq-q-text {
-          font-size: 1.05rem;
-          color: var(--text-title);
-          font-weight: 600;
+          font-size: 1.1rem;
+          font-weight: 700;
+          line-height: 1.4;
+          transition: color 0.2s ease;
+        }
+
+        .faq-q-text.text-green-dark {
+          color: #2E5B10;
+        }
+
+        .faq-q-text.text-white {
+          color: #FFFFFF;
+        }
+
+        .faq-icon-wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 36px;
+          height: 36px;
+          border-radius: 50%;
+          flex-shrink: 0;
+          transition: background-color 0.25s ease;
+        }
+
+        .faq-icon-wrapper.bg-green-light {
+          background-color: #DCEDC8;
+        }
+
+        .faq-icon-wrapper.bg-white-20 {
+          background-color: rgba(255, 255, 255, 0.25);
         }
 
         .faq-icon-arrow {
-          color: var(--text-muted);
-          transition: transform 0.25s ease;
-          flex-shrink: 0;
+          transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
         }
 
-        .faq-accordion-item.active .faq-icon-arrow {
+        .faq-icon-arrow.text-green-primary {
+          color: #558B2F;
+        }
+
+        .faq-icon-arrow.text-white {
+          color: #FFFFFF;
+        }
+
+        .faq-icon-arrow.rotate-180 {
           transform: rotate(180deg);
-          color: var(--green-primary);
         }
 
         .faq-answer-box {
-          margin-top: 14px;
-          padding-top: 14px;
-          border-top: 1px solid var(--border-color);
-          color: var(--text-body);
-          font-size: 0.95rem;
-          line-height: 1.6;
+          margin-top: 16px;
+          padding-top: 16px;
+          border-top: 1px solid rgba(255, 255, 255, 0.3);
+          color: #F4FBF0;
+          font-size: 1rem;
+          line-height: 1.65;
+          font-weight: 450;
+        }
+
+        .faq-accordion-item:not(.active) .faq-answer-box {
+          border-top-color: rgba(124, 179, 66, 0.2);
+          color: #334E22;
         }
       `}</style>
     </section>
   );
 }
+
