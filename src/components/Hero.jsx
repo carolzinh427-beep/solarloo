@@ -19,14 +19,14 @@ export default function Hero() {
             <img src="/logo.svg" alt="Onda Verde Energia Solar" className="hero-logo-img" />
           </div>
 
-          {/* Centered H1 Phrase with Fade-In Entrance + ShinyText Effect */}
+          {/* Centered H1 Phrase with Fade-In Entrance + Futuristic Font + ShinyText Effect */}
           <h1 className="hero-title hero-title-fade">
             <ShinyText
-              text="Você já pensou em gerar a própria energia?"
-              speed={3}
-              color="#222222"
+              text="VOCÊ JÁ PENSOU EM GERAR A PRÓPRIA ENERGIA?"
+              speed={3.5}
+              color="#1A1A1A"
               shineColor="#7CB342"
-              spread={120}
+              spread={130}
               direction="left"
             />
           </h1>
@@ -153,11 +153,14 @@ export default function Hero() {
         }
 
         .hero-title {
-          font-size: 2.9rem;
-          margin-bottom: 16px;
+          font-family: 'Orbitron', 'Chakra Petch', var(--font-heading), sans-serif;
+          font-weight: 800;
+          font-size: 2.35rem;
+          text-transform: uppercase;
+          letter-spacing: 0.04em;
+          margin-bottom: 18px;
           color: var(--text-title);
-          line-height: 1.18;
-          letter-spacing: -0.02em;
+          line-height: 1.25;
         }
 
         .hero-subtitle {
