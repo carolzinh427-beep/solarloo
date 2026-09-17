@@ -5,19 +5,19 @@ import ShinyText from './ShinyText';
 export default function Hero() {
   return (
     <section id="hero" className="hero-section">
-      {/* Solar Panel Full Background Overlay */}
+      {/* Solar Panel Background Overlay Mask */}
       <div className="hero-bg-overlay"></div>
 
       <div className="container hero-container">
         <div className="hero-content">
           
-          {/* Logo da Onda Verde no Hero */}
+          {/* Official Onda Verde Logo - Centered with No Background */}
           <div className="hero-logo-box">
             <img src="/logo.svg" alt="Onda Verde Energia Solar" className="hero-logo-img" />
           </div>
 
-          {/* Frase com Efeito ShinyText */}
-          <h1 className="hero-title">
+          {/* Centered H1 Phrase with Fade-In Entrance + ShinyText Effect */}
+          <h1 className="hero-title hero-title-fade">
             <ShinyText
               text="Você já pensou em gerar a própria energia?"
               speed={3}
@@ -70,8 +70,8 @@ export default function Hero() {
       <style>{`
         .hero-section {
           position: relative;
-          padding-top: 110px;
-          padding-bottom: 50px;
+          padding-top: 130px;
+          padding-bottom: 70px;
           background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80');
           background-size: cover;
           background-position: center center;
@@ -84,7 +84,7 @@ export default function Hero() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.92) 55%, rgba(255, 255, 255, 0.5) 100%);
+          background: radial-gradient(circle at center, rgba(255, 255, 255, 0.94) 0%, rgba(255, 255, 255, 0.97) 70%, rgba(255, 255, 255, 0.9) 100%);
           z-index: 1;
         }
 
@@ -94,48 +94,72 @@ export default function Hero() {
         }
 
         .hero-content {
-          max-width: 660px;
+          max-width: 820px;
+          margin: 0 auto;
           display: flex;
           flex-direction: column;
-          align-items: flex-start;
+          align-items: center;
+          text-align: center;
         }
 
+        /* Logo sem plano de fundo e centralizada */
         .hero-logo-box {
-          margin-bottom: 16px;
-          background: rgba(255, 255, 255, 0.92);
-          padding: 6px 14px;
-          border-radius: 10px;
-          border: 1px solid var(--border-color);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+          margin-bottom: 24px;
+          background: transparent;
+          border: none;
+          box-shadow: none;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         .hero-logo-img {
-          height: 38px;
+          height: 64px;
           width: auto;
           display: block;
         }
 
+        /* Animação Fade-In no título centralizado */
+        @keyframes heroFadeIn {
+          from {
+            opacity: 0;
+            transform: translateY(16px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        .hero-title-fade {
+          animation: heroFadeIn 1.1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+          text-align: center;
+          width: 100%;
+        }
+
         .hero-title {
-          font-size: 2.7rem;
-          margin-bottom: 14px;
+          font-size: 2.9rem;
+          margin-bottom: 16px;
           color: var(--text-title);
           line-height: 1.18;
           letter-spacing: -0.02em;
         }
 
         .hero-subtitle {
-          font-size: 1.05rem;
+          font-size: 1.1rem;
           color: var(--text-body);
-          line-height: 1.5;
-          margin-bottom: 20px;
+          line-height: 1.55;
+          margin-bottom: 24px;
           font-weight: 500;
+          max-width: 680px;
         }
 
         .hero-bullets-list {
           display: flex;
           flex-direction: column;
+          align-items: center;
           gap: 10px;
-          margin-bottom: 24px;
+          margin-bottom: 28px;
         }
 
         .bullet-row {
@@ -143,7 +167,7 @@ export default function Hero() {
           align-items: center;
           gap: 10px;
           font-weight: 600;
-          font-size: 0.92rem;
+          font-size: 0.95rem;
           color: var(--text-title);
         }
 
@@ -154,51 +178,50 @@ export default function Hero() {
 
         .hero-buttons-group {
           display: flex;
-          gap: 12px;
+          justify-content: center;
+          gap: 14px;
           width: 100%;
           flex-wrap: wrap;
         }
 
         .btn-hero {
-          padding: 12px 24px;
-          font-size: 0.95rem;
+          padding: 14px 28px;
+          font-size: 0.98rem;
         }
 
         @media (max-width: 1024px) {
           .hero-section {
-            padding-top: 100px;
-            padding-bottom: 40px;
+            padding-top: 110px;
+            padding-bottom: 50px;
           }
-          .hero-bg-overlay {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.97) 0%, rgba(255, 255, 255, 0.9) 100%);
+          .hero-logo-img {
+            height: 52px;
           }
           .hero-title {
-            font-size: 2.1rem;
-          }
-          .hero-content {
-            max-width: 100%;
+            font-size: 2.2rem;
           }
         }
 
         @media (max-width: 640px) {
           .hero-section {
-            padding-top: 90px;
-            padding-bottom: 30px;
+            padding-top: 95px;
+            padding-bottom: 36px;
           }
           .hero-logo-img {
-            height: 32px;
+            height: 42px;
           }
           .hero-title {
-            font-size: 1.65rem;
+            font-size: 1.7rem;
           }
           .hero-subtitle {
-            font-size: 0.92rem;
+            font-size: 0.95rem;
           }
           .bullet-row {
             font-size: 0.85rem;
           }
           .hero-buttons-group {
             flex-direction: column;
+            width: 100%;
           }
         }
       `}</style>
