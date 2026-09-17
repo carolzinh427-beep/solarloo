@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, MessageSquare, CheckCircle2 } from 'lucide-react';
+import ShinyText from './ShinyText';
 
 export default function Hero() {
   return (
@@ -10,8 +11,21 @@ export default function Hero() {
       <div className="container hero-container">
         <div className="hero-content">
           
+          {/* Logo da Onda Verde no Hero (sem mudar a estrutura) */}
+          <div className="hero-logo-box">
+            <img src="/logo.svg" alt="Onda Verde Energia Solar" className="hero-logo-img" />
+          </div>
+
+          {/* Frase com Efeito ShinyText da React Bits */}
           <h1 className="hero-title">
-            Você já pensou em gerar a própria energia?
+            <ShinyText
+              text="Você já pensou em gerar a própria energia?"
+              speed={3}
+              color="#2A2A2A"
+              shineColor="#7CB342"
+              spread={120}
+              direction="left"
+            />
           </h1>
 
           <p className="hero-subtitle">
@@ -56,8 +70,8 @@ export default function Hero() {
       <style>{`
         .hero-section {
           position: relative;
-          padding-top: 170px;
-          padding-bottom: 110px;
+          padding-top: 160px;
+          padding-bottom: 100px;
           background-image: url('https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&w=1920&q=80');
           background-size: cover;
           background-position: center center;
@@ -70,7 +84,7 @@ export default function Hero() {
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(90deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.88) 50%, rgba(255, 255, 255, 0.4) 100%);
+          background: linear-gradient(90deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.9) 55%, rgba(255, 255, 255, 0.45) 100%);
           z-index: 1;
         }
 
@@ -80,14 +94,29 @@ export default function Hero() {
         }
 
         .hero-content {
-          max-width: 680px;
+          max-width: 720px;
           display: flex;
           flex-direction: column;
           align-items: flex-start;
         }
 
+        .hero-logo-box {
+          margin-bottom: 24px;
+          background: rgba(255, 255, 255, 0.9);
+          padding: 8px 16px;
+          border-radius: 12px;
+          border: 1px solid var(--border-color);
+          box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .hero-logo-img {
+          height: 52px;
+          width: auto;
+          display: block;
+        }
+
         .hero-title {
-          font-size: 3.4rem;
+          font-size: 3.3rem;
           margin-bottom: 20px;
           color: var(--text-title);
           line-height: 1.15;
@@ -137,10 +166,10 @@ export default function Hero() {
 
         @media (max-width: 1024px) {
           .hero-bg-overlay {
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.85) 100%);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.96) 0%, rgba(255, 255, 255, 0.88) 100%);
           }
           .hero-title {
-            font-size: 2.6rem;
+            font-size: 2.5rem;
           }
           .hero-content {
             max-width: 100%;
