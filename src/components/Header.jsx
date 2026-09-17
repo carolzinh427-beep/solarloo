@@ -107,7 +107,7 @@ export default function Header() {
           left: 0;
           width: 100%;
           z-index: 1000;
-          background-color: #FFFFFF;
+          background-color: var(--green-light);
           transition: all 0.25s ease;
         }
 
@@ -150,8 +150,8 @@ export default function Header() {
         }
 
         .main-navbar {
-          background-color: #FFFFFF;
-          border-bottom: 1px solid var(--border-color);
+          background-color: var(--green-light);
+          border-bottom: 1px solid var(--green-border);
         }
 
         .header-container {

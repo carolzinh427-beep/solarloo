@@ -75,8 +75,8 @@ export default function Footer() {
 
       <style>{`
         .footer-root {
-          background-color: #FFFFFF;
-          border-top: 1px solid var(--border-color);
+          background-color: var(--green-light);
+          border-top: 1px solid var(--green-border);
           padding: 36px 0 20px 0;
         }
 
@@ -85,7 +85,7 @@ export default function Footer() {
           grid-template-columns: 1.4fr 1fr 1.2fr;
           gap: 32px;
           padding-bottom: 24px;
-          border-bottom: 1px solid var(--border-color);
+          border-bottom: 1px solid var(--green-border);
         }
 
         .footer-logo-img {

@@ -301,6 +301,35 @@ const ScrollStack = ({
     updateCardTransforms
   ]);
 
+  // Auto-scroll rolling loop effect
+  React.useEffect(() => {
+    if (!scrollerRef.current || useWindowScroll) return;
+    const scroller = scrollerRef.current;
+
+    let isHovered = false;
+    const onMouseEnter = () => { isHovered = true; };
+    const onMouseLeave = () => { isHovered = false; };
+
+    scroller.addEventListener('mouseenter', onMouseEnter);
+    scroller.addEventListener('mouseleave', onMouseLeave);
+
+    const interval = setInterval(() => {
+      if (isHovered || !scroller) return;
+      const maxScroll = scroller.scrollHeight - scroller.clientHeight;
+      if (scroller.scrollTop >= maxScroll - 25) {
+        scroller.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        scroller.scrollBy({ top: 160, behavior: 'smooth' });
+      }
+    }, 3000);
+
+    return () => {
+      clearInterval(interval);
+      scroller.removeEventListener('mouseenter', onMouseEnter);
+      scroller.removeEventListener('mouseleave', onMouseLeave);
+    };
+  }, [useWindowScroll]);
+
   return (
     <div className={`scroll-stack-scroller ${className}`.trim()} ref={scrollerRef}>
       <div className="scroll-stack-inner">
