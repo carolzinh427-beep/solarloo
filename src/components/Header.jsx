@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Phone, ArrowRight } from 'lucide-react';
 import PillNav from './PillNav';
-import StaggeredMenu from './StaggeredMenu';
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -21,11 +20,6 @@ export default function Header() {
     { label: 'Simulação', href: '#simulation', ariaLabel: 'Simular economia' },
     { label: 'FAQ', href: '#faq', ariaLabel: 'Ver perguntas frequentes' },
     { label: 'Contato', href: '#contact', ariaLabel: 'Entrar em contato' },
-  ];
-
-  const socialItems = [
-    { label: 'WhatsApp: (11) 92489-1417', link: 'https://wa.me/5511924891417' },
-    { label: 'Instagram: @ondaverdeenergia', link: 'https://www.instagram.com/ondaverdeenergia/' },
   ];
 
   return (
@@ -59,7 +53,7 @@ export default function Header() {
             <img src="/logo.svg" alt="Onda Verde Energia Solar" className="header-logo-img" />
           </a>
 
-          {/* React Bits PillNav Component for Desktop Navigation */}
+          {/* React Bits PillNav Component for Desktop & Mobile Navigation */}
           <div className="desktop-pill-nav">
             <PillNav
               items={navItems}
@@ -72,30 +66,12 @@ export default function Header() {
             />
           </div>
 
-          {/* Action Button & Mobile Staggered Menu Trigger */}
+          {/* Action Button */}
           <div className="header-actions">
             <a href="#simulation" className="btn-primary btn-header">
               <span>Simular economia</span>
               <ArrowRight size={16} />
             </a>
-
-            {/* React Bits Staggered Menu para Dispositivos Móveis e Navegação Fluida */}
-            <div className="staggered-menu-mobile-container">
-              <StaggeredMenu
-                position="right"
-                items={navItems.map(item => ({ label: item.label, link: item.href, ariaLabel: item.ariaLabel }))}
-                socialItems={socialItems}
-                displaySocials={true}
-                displayItemNumbering={true}
-                menuButtonColor="#454545"
-                openMenuButtonColor="#7CB342"
-                changeMenuColorOnOpen={true}
-                colors={['#F4F9EC', '#DCEDC8', '#FFFFFF']}
-                logoUrl="/logo.svg"
-                accentColor="#7CB342"
-                isFixed={false}
-              />
-            </div>
           </div>
 
         </div>
@@ -191,10 +167,8 @@ export default function Header() {
         .desktop-pill-nav {
           display: flex;
           align-items: center;
-        }
-
-        .staggered-menu-mobile-container {
-          display: none;
+          justify-content: center;
+          max-width: 100%;
         }
 
         /* Mobile specific adjustments */
@@ -205,54 +179,37 @@ export default function Header() {
 
           .header-container {
             height: 64px;
-            padding: 0 16px;
+            padding: 0 12px;
+            gap: 8px;
           }
 
           .header-logo-img {
-            height: 42px;
+            height: 36px;
           }
 
           .desktop-pill-nav {
-            display: none !important;
+            display: flex !important;
+            overflow-x: auto;
+            max-width: calc(100vw - 110px);
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+          }
+
+          .desktop-pill-nav::-webkit-scrollbar {
+            display: none;
           }
 
           .btn-header {
             display: none !important;
           }
+        }
 
-          .staggered-menu-mobile-container {
-            display: block !important;
+        @media (max-width: 576px) {
+          .header-logo-img {
+            height: 32px;
           }
-
-          .sm-toggle {
-            background-color: #7CB342 !important;
-            color: #FFFFFF !important;
-            padding: 8px 16px !important;
-            border-radius: 9999px !important;
-            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.3) !important;
-            font-size: 0.9rem !important;
-            font-weight: 700 !important;
-            letter-spacing: 0.03em !important;
-          }
-
-          .sm-toggle .sm-icon-line {
-            background-color: #FFFFFF !important;
-          }
-
-          .sm-logo {
-            display: none !important;
-          }
-
-          .staggered-menu-header {
-            padding: 0 !important;
-            position: relative !important;
-            justify-content: flex-end !important;
-          }
-
-          .staggered-menu-wrapper {
-            position: relative !important;
-            width: auto !important;
-            height: auto !important;
+          .desktop-pill-nav {
+            max-width: calc(100vw - 90px);
           }
         }
       `}</style>

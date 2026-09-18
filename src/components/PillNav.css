@@ -150,52 +150,30 @@
 }
 
 .desktop-only {
-  display: block;
+  display: flex !important;
 }
 
 .mobile-only {
-  display: none;
+  display: none !important;
 }
 
 @media (max-width: 768px) {
-  .desktop-only {
+  .pill-nav-items {
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .pill-list {
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .pill-list::-webkit-scrollbar {
     display: none;
   }
-
-  .mobile-only {
-    display: block;
+  .pill {
+    padding: 0 12px;
+    font-size: 0.8rem;
   }
-}
-
-.mobile-menu-button {
-  width: var(--nav-h);
-  height: var(--nav-h);
-  border-radius: 50%;
-  background: var(--base, #7CB342);
-  border: none;
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 4px;
-  cursor: pointer;
-  padding: 0;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .mobile-menu-button {
-    display: flex;
-  }
-}
-
-.hamburger-line {
-  width: 16px;
-  height: 2px;
-  background: var(--pill-bg, #fff);
-  border-radius: 1px;
-  transition: all 0.01s ease;
-  transform-origin: center;
 }
 
 .mobile-menu-popover {
